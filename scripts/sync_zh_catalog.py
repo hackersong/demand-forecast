@@ -42,7 +42,15 @@ def main():
     out = []
     current = None
     count = 0
+    # A multi-line msgstr continues on lines that start with a quote. Those
+    # continuation lines belong to the *old* translation and must be dropped,
+    # otherwise they are appended to the new msgstr and the rendered text is
+    # repeated several times.
+    skipping_msgstr = False
     for line in lines:
+        if skipping_msgstr and line.startswith('"'):
+            continue
+        skipping_msgstr = False
         if line.startswith('msgid '):
             current = line[6:].strip()
             out.append(line)
@@ -52,10 +60,12 @@ def main():
         elif line.startswith('msgstr ') and current is not None:
             msgid = current[1:-1]
             if msgid == '':
+                # Header entry: keep the original multi-line msgstr as it is.
                 out.append(line)
             else:
                 out.append('msgstr "%s"' % po_escape(msgid))
                 count += 1
+                skipping_msgstr = True
             current = None
         else:
             out.append(line)

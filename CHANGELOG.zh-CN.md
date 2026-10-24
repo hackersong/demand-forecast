@@ -38,6 +38,15 @@ English version: [CHANGELOG.md](CHANGELOG.md)
 * `Content-Language` 响应头跟随当前语言，不再固定为 `zh-CN`。
 * `requirements.txt` 改为最低版本约束，并说明可选算法依赖。
 
+### 修复
+
+* 界面文案被连续渲染 2～7 遍（首页提示、上传格式说明等）。原因是翻译目录的
+  `msgstr` 同时写入了完整句子与自动换行的续行，gettext 拼接后同一句话重复多次。
+  已修复全部六个目录（en 18、fr 27、de 21、es 26、ja 17 条），
+  并重新生成简体中文目录。
+* `scripts/sync_zh_catalog.py` 不再保留旧 `msgstr` 的续行，
+  重新同步中文目录不会再引入重复。
+
 ### 安全
 
 * `db.sqlite3`、`.env`、`__pycache__`、`media/`、`staticfiles/` 与编译产物

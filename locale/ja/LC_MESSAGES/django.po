@@ -24,9 +24,6 @@ msgstr "需要予測システムへようこそ"
 #: apps/core/templates/core/index.html:7
 msgid "请使用左侧菜单访问数据管理、模型训练和需求预测模块。"
 msgstr "左側のメニューからデータ管理・モデル学習・需要予測の各モジュールにアクセスできます。"
-"左側のメニューからデータ管理・モデル学習・需要予測の各モジュールにアクセスで"
-"きます。左側のメニューからデータ管理・モデル学習・需要予測の各モジュールにア"
-"クセスできます。"
 
 #: apps/core/templatetags/i18n_dates.py:55
 msgid "#year#年#month_num#月"
@@ -39,8 +36,6 @@ msgstr "データ分析"
 #: apps/data_insight/templates/data_insight/index.html:9
 msgid "按区域和SKU维度分析销售数据，查看Top排行与销量趋势"
 msgstr "地域別・SKU別に売上データを分析し、上位ランキングと売上推移を確認できます"
-"地域別・SKU別に売上データを分析し、上位ランキングと売上推移を確認できます地域"
-"別・SKU別に売上データを分析し、上位ランキングと売上推移を確認できます"
 
 #: apps/data_insight/templates/data_insight/index.html:19
 #: apps/data_management/templates/data_management/view_data.html:24
@@ -176,9 +171,6 @@ msgstr "データ調整"
 #: apps/data_management/templates/data_management/adjust_data.html:10
 msgid "快速调整最近的销售和促销记录，支持保存与删除操作"
 msgstr "最近の売上・プロモーション記録をすばやく調整できます。保存と削除に対応しています"
-"最近の売上・プロモーション記録をすばやく調整できます。保存と削除に対応してい"
-"ます最近の売上・プロモーション記録をすばやく調整できます。保存と削除に対応し"
-"ています"
 
 #: apps/data_management/templates/data_management/adjust_data.html:13
 msgid "返回查看"
@@ -313,9 +305,6 @@ msgid ""
 "包含销售区域、产品分类、物料号、物料名称、日期、销量。每行表示一条日期的销量"
 "记录。"
 msgstr "販売地域、製品分類、品目コード、品目名称、日付、売上数量が含まれます。1行が1日分の売上数量を表します。"
-"販売地域、製品分類、品目コード、品目名称、日付、売上数量が含まれます。1行が1"
-"日分の売上数量を表します。販売地域、製品分類、品目コード、品目名称、日付、売"
-"上数量が含まれます。1行が1日分の売上数量を表します。"
 
 #: apps/data_management/templates/data_management/data_upload.html:21
 msgid "下载销售模板"
@@ -330,9 +319,6 @@ msgstr "プロモーションデータテンプレート"
 msgid ""
 "包含销售区域、产品分类、物料号、物料名称、日期、促销力度、开始/结束日期。"
 msgstr "販売地域、製品分類、品目コード、品目名称、日付、プロモーション強度、開始/終了日が含まれます。"
-"販売地域、製品分類、品目コード、品目名称、日付、プロモーション強度、開始/終了"
-"日が含まれます。販売地域、製品分類、品目コード、品目名称、日付、プロモーショ"
-"ン強度、開始/終了日が含まれます。"
 
 #: apps/data_management/templates/data_management/data_upload.html:39
 msgid "下载促销模板"
@@ -348,11 +334,6 @@ msgid ""
 "包含销售区域、产品分类、物料信息、物料号、物料名称、日期、销量。请确保日期格"
 "式为 YYYY-MM-DD，销量为数字。每行表示一条日期的销量记录（长表格）。"
 msgstr "販売地域、製品分類、品目情報、品目コード、品目名称、日付、売上数量が含まれます。日付は YYYY-MM-DD 形式、売上数量は数値で入力してください。1行が1日分の売上数量を表します（ロング形式）。"
-"販売地域、製品分類、品目情報、品目コード、品目名称、日付、売上数量が含まれま"
-"す。日付は YYYY-MM-DD 形式、売上数量は数値で入力してください。1行が1日分の売"
-"上数量を表します（ロング形式）。販売地域、製品分類、品目情報、品目コード、品"
-"目名称、日付、売上数量が含まれます。日付は YYYY-MM-DD 形式、売上数量は数値で"
-"入力してください。1行が1日分の売上数量を表します（ロング形式）。"
 
 #: apps/data_management/templates/data_management/data_upload.html:66
 #: apps/data_management/templates/data_management/data_upload.html:74
@@ -365,12 +346,6 @@ msgid ""
 "日期、促销结束日期。请确保日期格式为 YYYY-MM-DD，促销力度为数字，开始/结束日"
 "期为有效日期。"
 msgstr "販売地域、製品分類、品目情報、品目コード、品目名称、日付、プロモーション強度、プロモーション開始日・終了日が含まれます。日付は YYYY-MM-DD 形式、プロモーション強度は数値、開始/終了日は有効な日付で入力してください。"
-"販売地域、製品分類、品目情報、品目コード、品目名称、日付、プロモーション強"
-"度、プロモーション開始日・終了日が含まれます。日付は YYYY-MM-DD 形式、プロ"
-"モーション強度は数値、開始/終了日は有効な日付で入力してください。販売地域、製"
-"品分類、品目情報、品目コード、品目名称、日付、プロモーション強度、プロモー"
-"ション開始日・終了日が含まれます。日付は YYYY-MM-DD 形式、プロモーション強度"
-"は数値、開始/終了日は有効な日付で入力してください。"
 
 #: apps/data_management/templates/data_management/data_upload.html:79
 #: apps/data_management/templates/data_management/upload.html:86
@@ -384,9 +359,6 @@ msgstr "既存データ"
 #: apps/data_management/templates/data_management/data_upload.html:97
 msgid "浏览、筛选和导出已上传的全部销售数据与促销数据"
 msgstr "アップロード済みのすべての売上・プロモーションデータを閲覧・絞り込み・エクスポートできます"
-"アップロード済みのすべての売上・プロモーションデータを閲覧・絞り込み・エクス"
-"ポートできますアップロード済みのすべての売上・プロモーションデータを閲覧・絞"
-"り込み・エクスポートできます"
 
 #: apps/data_management/templates/data_management/data_upload.html:99
 msgid "查看数据"
@@ -399,15 +371,10 @@ msgstr "データアップロード"
 #: apps/data_management/templates/data_management/upload.html:9
 msgid "上传销售数据和促销数据，支持 Excel (.xlsx) 格式"
 msgstr "売上データとプロモーションデータを Excel (.xlsx) 形式でアップロードします"
-"売上データとプロモーションデータを Excel (.xlsx) 形式でアップロードします売上"
-"データとプロモーションデータを Excel (.xlsx) 形式でアップロードします"
 
 #: apps/data_management/templates/data_management/upload.html:25
 msgid "包含销售区域、产品分类、物料号、物料名称，以及 201901-202203 的月销量列"
 msgstr "販売地域、製品分類、品目コード、品目名称、および 201901-202203 の月次売上列が含まれます"
-"販売地域、製品分類、品目コード、品目名称、および 201901-202203 の月次売上列が"
-"含まれます販売地域、製品分類、品目コード、品目名称、および 201901-202203 の月"
-"次売上列が含まれます"
 
 #: apps/data_management/templates/data_management/upload.html:27
 #: apps/data_management/templates/data_management/upload.html:45
@@ -417,9 +384,6 @@ msgstr "テンプレートをダウンロード"
 #: apps/data_management/templates/data_management/upload.html:43
 msgid "包含销售区域、产品分类、物料号、日期、初始价格和促销力度等字段"
 msgstr "販売地域、製品分類、品目コード、日付、初期価格、プロモーション強度などの項目が含まれます"
-"販売地域、製品分類、品目コード、日付、初期価格、プロモーション強度などの項目"
-"が含まれます販売地域、製品分類、品目コード、日付、初期価格、プロモーション強"
-"度などの項目が含まれます"
 
 #: apps/data_management/templates/data_management/upload.html:71
 #: apps/data_management/templates/data_management/upload.html:78
@@ -512,17 +476,10 @@ msgstr "プロモーション終了"
 #: apps/data_management/views.py:113
 msgid "未检测到上传文件，请选择要上传的销售或促销数据文件。"
 msgstr "アップロードファイルが検出されませんでした。売上またはプロモーションのファイルを選択してください。"
-"アップロードファイルが検出されませんでした。売上またはプロモーションのファイ"
-"ルを選択してください。アップロードファイルが検出されませんでした。売上または"
-"プロモーションのファイルを選択してください。"
 
 #: apps/data_management/views.py:276
 msgid "上传完成，但未检测到有效记录，请检查 Excel 是否符合模板格式。"
 msgstr "アップロードは完了しましたが、有効な記録が見つかりませんでした。Excelがテンプレート形式に従っているか確認してください。"
-"アップロードは完了しましたが、有効な記録が見つかりませんでした。Excelがテンプ"
-"レート形式に従っているか確認してください。アップロードは完了しましたが、有効"
-"な記録が見つかりませんでした。Excelがテンプレート形式に従っているか確認してく"
-"ださい。"
 
 #: apps/data_management/views.py:536
 msgid "销售数据更新成功"
@@ -967,9 +924,6 @@ msgstr "および"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:75
 msgid "系统会取最深层级中第一个选中项作为分析目标，并自动匹配最优模型。"
 msgstr "システムは最下層で最初に選択された項目を分析対象とし、最適なモデルを自動的に選択します。"
-"システムは最下層で最初に選択された項目を分析対象とし、最適なモデルを自動的に"
-"選択します。システムは最下層で最初に選択された項目を分析対象とし、最適なモデ"
-"ルを自動的に選択します。"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:84
 msgid "促销力度调整"
@@ -1020,10 +974,6 @@ msgid ""
 "留空则系统自动匹配区域+产品组合的最优模型。也可手动指定一个已训练的模型进行预"
 "测。"
 msgstr "空欄の場合、システムが地域+製品の組み合わせに最適なモデルを自動選択します。学習済みモデルを手動で指定することもできます。"
-"空欄の場合、システムが地域+製品の組み合わせに最適なモデルを自動選択します。学"
-"習済みモデルを手動で指定することもできます。空欄の場合、システムが地域+製品の"
-"組み合わせに最適なモデルを自動選択します。学習済みモデルを手動で指定すること"
-"もできます。"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:111
 msgid "-- 自动匹配最优模型 --"
@@ -1094,9 +1044,6 @@ msgstr "プロモーションが売上に与える影響の大きさを表しま
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:195
 msgid "弹性 = (有促销月均销量 / 无促销月均销量 - 1) / 平均促销力度"
 msgstr "弾性値 = (プロモーションあり月平均売上 / プロモーションなし月平均売上 - 1) / 平均プロモーション強度"
-"弾性値 = (プロモーションあり月平均売上 / プロモーションなし月平均売上 - 1) / "
-"平均プロモーション強度弾性値 = (プロモーションあり月平均売上 / プロモーション"
-"なし月平均売上 - 1) / 平均プロモーション強度"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:196
 msgid "。例如，无促销月均卖1000件，有促销月均卖1250件（+25"
@@ -1222,8 +1169,6 @@ msgstr "万"
 #: apps/demand_prediction/views.py:356 apps/demand_prediction/views.py:360
 msgid "当前筛选条件下没有可预测的项目，请调整筛选条件"
 msgstr "現在の絞り込み条件では予測できる項目がありません。条件を変更してください"
-"現在の絞り込み条件では予測できる項目がありません。条件を変更してください現在"
-"の絞り込み条件では予測できる項目がありません。条件を変更してください"
 
 #: apps/demand_prediction/views.py:374 apps/demand_prediction/views.py:375
 msgid "所选模型不存在"

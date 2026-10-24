@@ -47,6 +47,18 @@ and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 * `requirements.txt` uses minimum versions instead of exact pins and documents
   the optional algorithm dependencies.
 
+### Fixed
+
+* UI text was rendered two to seven times in a row (for example the home page
+  hint or the upload format description). The catalogs contained `msgstr` values
+  that repeated the same sentence, because the translation was written both as a
+  full sentence and again as wrapped continuation lines. All six catalogs were
+  repaired (en 18, fr 27, de 21, es 26, ja 17 entries) and the Simplified
+  Chinese catalog was regenerated.
+* `scripts/sync_zh_catalog.py` no longer keeps the continuation lines of the
+  previous `msgstr`, so re-syncing the Chinese catalog cannot reintroduce the
+  duplication.
+
 ### Security
 
 * `db.sqlite3`, `.env`, `__pycache__`, `media/`, `staticfiles/` and compiled

@@ -24,10 +24,6 @@ msgstr "Bienvenue dans le système de prévision de la demande"
 #: apps/core/templates/core/index.html:7
 msgid "请使用左侧菜单访问数据管理、模型训练和需求预测模块。"
 msgstr "Utilisez le menu de gauche pour accéder aux modules Gestion des données, Entraînement du modèle et Prévision de la demande."
-"Utilisez le menu de gauche pour accéder aux modules Gestion des données, "
-"Entraînement du modèle et Prévision de la demande.Utilisez le menu de gauche "
-"pour accéder aux modules Gestion des données, Entraînement du modèle et "
-"Prévision de la demande."
 
 #: apps/core/templatetags/i18n_dates.py:55
 msgid "#year#年#month_num#月"
@@ -40,9 +36,6 @@ msgstr "Analyse des données"
 #: apps/data_insight/templates/data_insight/index.html:9
 msgid "按区域和SKU维度分析销售数据，查看Top排行与销量趋势"
 msgstr "Analysez les ventes par région et par SKU : top des classements et tendances de ventes"
-"Analysez les ventes par région et par SKU : top des classements et tendances "
-"de ventesAnalysez les ventes par région et par SKU : top des classements et "
-"tendances de ventes"
 
 #: apps/data_insight/templates/data_insight/index.html:19
 #: apps/data_management/templates/data_management/view_data.html:24
@@ -178,10 +171,6 @@ msgstr "Ajustement des données"
 #: apps/data_management/templates/data_management/adjust_data.html:10
 msgid "快速调整最近的销售和促销记录，支持保存与删除操作"
 msgstr "Modifiez rapidement les derniers enregistrements de ventes et de promotions ; enregistrement et suppression possibles"
-"Modifiez rapidement les derniers enregistrements de ventes et de "
-"promotions ; enregistrement et suppression possiblesModifiez rapidement les "
-"derniers enregistrements de ventes et de promotions ; enregistrement et "
-"suppression possibles"
 
 #: apps/data_management/templates/data_management/adjust_data.html:13
 msgid "返回查看"
@@ -316,11 +305,6 @@ msgid ""
 "包含销售区域、产品分类、物料号、物料名称、日期、销量。每行表示一条日期的销量"
 "记录。"
 msgstr "Contient la région de vente, la catégorie de produit, le n° d'article, le nom de l'article, la date et le volume des ventes. Chaque ligne correspond aux ventes d'une date."
-"Contient la région de vente, la catégorie de produit, le n° d'article, le "
-"nom de l'article, la date et le volume des ventes. Chaque ligne correspond "
-"aux ventes d'une date.Contient la région de vente, la catégorie de produit, "
-"le n° d'article, le nom de l'article, la date et le volume des ventes. "
-"Chaque ligne correspond aux ventes d'une date."
 
 #: apps/data_management/templates/data_management/data_upload.html:21
 msgid "下载销售模板"
@@ -335,11 +319,6 @@ msgstr "Modèle de données de promotion"
 msgid ""
 "包含销售区域、产品分类、物料号、物料名称、日期、促销力度、开始/结束日期。"
 msgstr "Contient la région de vente, la catégorie de produit, le n° d'article, le nom de l'article, la date, l'intensité de la promotion et les dates de début/fin."
-"Contient la région de vente, la catégorie de produit, le n° d'article, le "
-"nom de l'article, la date, l'intensité de la promotion et les dates de début/"
-"fin.Contient la région de vente, la catégorie de produit, le n° d'article, "
-"le nom de l'article, la date, l'intensité de la promotion et les dates de "
-"début/fin."
 
 #: apps/data_management/templates/data_management/data_upload.html:39
 msgid "下载促销模板"
@@ -355,13 +334,6 @@ msgid ""
 "包含销售区域、产品分类、物料信息、物料号、物料名称、日期、销量。请确保日期格"
 "式为 YYYY-MM-DD，销量为数字。每行表示一条日期的销量记录（长表格）。"
 msgstr "Contient la région de vente, la catégorie, les informations article, le n°, le nom, la date et le volume des ventes. Les dates doivent être au format AAAA-MM-JJ et les volumes numériques. Chaque ligne correspond aux ventes d'une date (format long)."
-"Contient la région de vente, la catégorie, les informations article, le n°, "
-"le nom, la date et le volume des ventes. Les dates doivent être au format "
-"AAAA-MM-JJ et les volumes numériques. Chaque ligne correspond aux ventes "
-"d'une date (format long).Contient la région de vente, la catégorie, les "
-"informations article, le n°, le nom, la date et le volume des ventes. Les "
-"dates doivent être au format AAAA-MM-JJ et les volumes numériques. Chaque "
-"ligne correspond aux ventes d'une date (format long)."
 
 #: apps/data_management/templates/data_management/data_upload.html:66
 #: apps/data_management/templates/data_management/data_upload.html:74
@@ -374,13 +346,6 @@ msgid ""
 "日期、促销结束日期。请确保日期格式为 YYYY-MM-DD，促销力度为数字，开始/结束日"
 "期为有效日期。"
 msgstr "Contient la région de vente, la catégorie, les informations article, le n°, le nom, la date, l'intensité de promotion, la date de début et la date de fin de promotion. Dates au format AAAA-MM-JJ, intensité numérique et dates de début/fin valides."
-"Contient la région de vente, la catégorie, les informations article, le n°, "
-"le nom, la date, l'intensité de promotion, la date de début et la date de "
-"fin de promotion. Dates au format AAAA-MM-JJ, intensité numérique et dates "
-"de début/fin valides.Contient la région de vente, la catégorie, les "
-"informations article, le n°, le nom, la date, l'intensité de promotion, la "
-"date de début et la date de fin de promotion. Dates au format AAAA-MM-JJ, "
-"intensité numérique et dates de début/fin valides."
 
 #: apps/data_management/templates/data_management/data_upload.html:79
 #: apps/data_management/templates/data_management/upload.html:86
@@ -394,9 +359,6 @@ msgstr "Données existantes"
 #: apps/data_management/templates/data_management/data_upload.html:97
 msgid "浏览、筛选和导出已上传的全部销售数据与促销数据"
 msgstr "Parcourez, filtrez et exportez toutes les données de vente et de promotion importées"
-"Parcourez, filtrez et exportez toutes les données de vente et de promotion "
-"importéesParcourez, filtrez et exportez toutes les données de vente et de "
-"promotion importées"
 
 #: apps/data_management/templates/data_management/data_upload.html:99
 msgid "查看数据"
@@ -413,11 +375,6 @@ msgstr "Importez les données de vente et de promotion au format Excel (.xlsx)"
 #: apps/data_management/templates/data_management/upload.html:25
 msgid "包含销售区域、产品分类、物料号、物料名称，以及 201901-202203 的月销量列"
 msgstr "Contient la région de vente, la catégorie de produit, le n° d'article, le nom de l'article et les colonnes de ventes mensuelles de 201901-202203"
-"Contient la région de vente, la catégorie de produit, le n° d'article, le "
-"nom de l'article et les colonnes de ventes mensuelles de "
-"201901-202203Contient la région de vente, la catégorie de produit, le n° "
-"d'article, le nom de l'article et les colonnes de ventes mensuelles de "
-"201901-202203"
 
 #: apps/data_management/templates/data_management/upload.html:27
 #: apps/data_management/templates/data_management/upload.html:45
@@ -427,10 +384,6 @@ msgstr "Télécharger le modèle"
 #: apps/data_management/templates/data_management/upload.html:43
 msgid "包含销售区域、产品分类、物料号、日期、初始价格和促销力度等字段"
 msgstr "Contient la région de vente, la catégorie de produit, le n° d'article, la date, le prix initial, l'intensité de la promotion et d'autres champs"
-"Contient la région de vente, la catégorie de produit, le n° d'article, la "
-"date, le prix initial, l'intensité de la promotion et d'autres "
-"champsContient la région de vente, la catégorie de produit, le n° d'article, "
-"la date, le prix initial, l'intensité de la promotion et d'autres champs"
 
 #: apps/data_management/templates/data_management/upload.html:71
 #: apps/data_management/templates/data_management/upload.html:78
@@ -452,8 +405,6 @@ msgstr "Les dates doivent être au format AAAA-MM-JJ"
 #: apps/data_management/templates/data_management/upload.html:114
 msgid "销量和促销力度字段必须为数字"
 msgstr "Les champs de ventes et d'intensité de promotion doivent être numériques"
-"Les champs de ventes et d'intensité de promotion doivent être numériquesLes "
-"champs de ventes et d'intensité de promotion doivent être numériques"
 
 #: apps/data_management/templates/data_management/upload.html:120
 msgid "物料号和区域代码需与系统一致"
@@ -525,16 +476,10 @@ msgstr "Fin de promotion"
 #: apps/data_management/views.py:113
 msgid "未检测到上传文件，请选择要上传的销售或促销数据文件。"
 msgstr "Aucun fichier détecté. Choisissez le fichier de ventes ou de promotions à importer."
-"Aucun fichier détecté. Choisissez le fichier de ventes ou de promotions à "
-"importer.Aucun fichier détecté. Choisissez le fichier de ventes ou de "
-"promotions à importer."
 
 #: apps/data_management/views.py:276
 msgid "上传完成，但未检测到有效记录，请检查 Excel 是否符合模板格式。"
 msgstr "Import terminé, mais aucune ligne valide n'a été trouvée. Vérifiez que le fichier Excel suit le modèle."
-"Import terminé, mais aucune ligne valide n'a été trouvée. Vérifiez que le "
-"fichier Excel suit le modèle.Import terminé, mais aucune ligne valide n'a "
-"été trouvée. Vérifiez que le fichier Excel suit le modèle."
 
 #: apps/data_management/views.py:536
 msgid "销售数据更新成功"
@@ -592,9 +537,6 @@ msgstr "Catégorie de produit niveau 5"
 #: apps/model_training/templates/model_training/train.html:51
 msgid "提示: 未勾选的分类层级将自动视为全选"
 msgstr "Astuce : un niveau de catégorie non coché est considéré comme « tout sélectionner »"
-"Astuce : un niveau de catégorie non coché est considéré comme « tout "
-"sélectionner »Astuce : un niveau de catégorie non coché est considéré comme "
-"« tout sélectionner »"
 
 #: apps/demand_prediction/templates/demand_prediction/forecast.html:67
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:79
@@ -982,10 +924,6 @@ msgstr "et"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:75
 msgid "系统会取最深层级中第一个选中项作为分析目标，并自动匹配最优模型。"
 msgstr "Le système utilise le premier élément sélectionné du niveau le plus profond comme cible et sélectionne automatiquement le meilleur modèle."
-"Le système utilise le premier élément sélectionné du niveau le plus profond "
-"comme cible et sélectionne automatiquement le meilleur modèle.Le système "
-"utilise le premier élément sélectionné du niveau le plus profond comme cible "
-"et sélectionne automatiquement le meilleur modèle."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:84
 msgid "促销力度调整"
@@ -994,10 +932,6 @@ msgstr "Ajustement de la promotion"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:86
 msgid "正数表示在当前促销基础上增加促销力度，负数表示减少。例如 +10"
 msgstr "Une valeur positive augmente l'intensité actuelle de la promotion, une valeur négative la réduit. Par exemple, +10"
-"Une valeur positive augmente l'intensité actuelle de la promotion, une "
-"valeur négative la réduit. Par exemple, +10Une valeur positive augmente "
-"l'intensité actuelle de la promotion, une valeur négative la réduit. Par "
-"exemple, +10"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:86
 msgid " 表示比当前促销再多投入 10"
@@ -1014,9 +948,6 @@ msgstr "L'élasticité indique : pour chaque variation de 1"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:99
 msgid "，销量变化多少"
 msgstr " de l'intensité de promotion, la variation correspondante du volume des ventes"
-" de l'intensité de promotion, la variation correspondante du volume des "
-"ventes de l'intensité de promotion, la variation correspondante du volume "
-"des ventes"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:99
 msgid "。例如弹性=2.5 表示促销+1"
@@ -1029,8 +960,6 @@ msgstr "→ ventes +2,5"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:99
 msgid "。留空则从历史促销数据自动计算。"
 msgstr ". Laissez vide pour la calculer à partir de l'historique des promotions."
-". Laissez vide pour la calculer à partir de l'historique des promotions.. "
-"Laissez vide pour la calculer à partir de l'historique des promotions."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:102
 msgid "自动计算"
@@ -1045,11 +974,6 @@ msgid ""
 "留空则系统自动匹配区域+产品组合的最优模型。也可手动指定一个已训练的模型进行预"
 "测。"
 msgstr "Laissez vide pour que le système choisisse le meilleur modèle pour la combinaison région + produit. Vous pouvez aussi désigner manuellement un modèle entraîné."
-"Laissez vide pour que le système choisisse le meilleur modèle pour la "
-"combinaison région + produit. Vous pouvez aussi désigner manuellement un "
-"modèle entraîné.Laissez vide pour que le système choisisse le meilleur "
-"modèle pour la combinaison région + produit. Vous pouvez aussi désigner "
-"manuellement un modèle entraîné."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:111
 msgid "-- 自动匹配最优模型 --"
@@ -1067,9 +991,6 @@ msgstr "Lancer la simulation"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:130
 msgid "请先选择产品分类和销售区域"
 msgstr "Veuillez d'abord sélectionner une catégorie de produit et une région de vente"
-"Veuillez d'abord sélectionner une catégorie de produit et une région de "
-"venteVeuillez d'abord sélectionner une catégorie de produit et une région de "
-"vente"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:147
 msgid "促销调整"
@@ -1095,8 +1016,6 @@ msgstr " de variation de la promotion →"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:158
 msgid "销量变化。从历史促销数据计算得出。"
 msgstr " de variation des ventes. Calculée à partir de l'historique des promotions."
-" de variation des ventes. Calculée à partir de l'historique des promotions. "
-"de variation des ventes. Calculée à partir de l'historique des promotions."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:161
 msgid "促销 →"
@@ -1125,17 +1044,10 @@ msgstr "Mesure l'effet de la promotion sur les ventes. Formule :"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:195
 msgid "弹性 = (有促销月均销量 / 无促销月均销量 - 1) / 平均促销力度"
 msgstr "élasticité = (ventes mensuelles moyennes avec promotion / ventes mensuelles moyennes sans promotion - 1) / intensité moyenne de promotion"
-"élasticité = (ventes mensuelles moyennes avec promotion / ventes mensuelles "
-"moyennes sans promotion - 1) / intensité moyenne de promotionélasticité = "
-"(ventes mensuelles moyennes avec promotion / ventes mensuelles moyennes sans "
-"promotion - 1) / intensité moyenne de promotion"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:196
 msgid "。例如，无促销月均卖1000件，有促销月均卖1250件（+25"
 msgstr ". Par exemple, sans promotion la moyenne mensuelle est de 1 000 unités et avec promotion de 1 250 unités (+25"
-". Par exemple, sans promotion la moyenne mensuelle est de 1 000 unités et "
-"avec promotion de 1 250 unités (+25. Par exemple, sans promotion la moyenne "
-"mensuelle est de 1 000 unités et avec promotion de 1 250 unités (+25"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:196
 msgid "，促销平均力度0.10（即10"
@@ -1148,9 +1060,6 @@ msgstr " de remise), alors élasticité = 0,25 / 0,10 = 2,50."
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:197
 msgid "系统自动从历史 PromotionData 中计算，也可手动覆盖。"
 msgstr "Calculée automatiquement à partir de l'historique PromotionData, vous pouvez la remplacer manuellement."
-"Calculée automatiquement à partir de l'historique PromotionData, vous pouvez "
-"la remplacer manuellement.Calculée automatiquement à partir de l'historique "
-"PromotionData, vous pouvez la remplacer manuellement."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:200
 msgid "数据可用性:"
@@ -1167,9 +1076,6 @@ msgstr " mois avec promotions)"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:204
 msgid "历史促销数据不足，使用默认弹性系数 1.0"
 msgstr "Historique de promotion insuffisant, l'élasticité par défaut de 1,0 est utilisée"
-"Historique de promotion insuffisant, l'élasticité par défaut de 1,0 est "
-"utiliséeHistorique de promotion insuffisant, l'élasticité par défaut de 1,0 "
-"est utilisée"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:207
 msgid "基线月均:"
@@ -1251,9 +1157,6 @@ msgstr "Veuillez sélectionner une catégorie de produit"
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:494
 msgid "请选择产品和销售区域后再开始分析"
 msgstr "Sélectionnez un produit et une région de vente avant de lancer l'analyse"
-"Sélectionnez un produit et une région de vente avant de lancer "
-"l'analyseSélectionnez un produit et une région de vente avant de lancer "
-"l'analyse"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:691
 msgid "What-If 影响区域"
@@ -1266,8 +1169,6 @@ msgstr "10k"
 #: apps/demand_prediction/views.py:356 apps/demand_prediction/views.py:360
 msgid "当前筛选条件下没有可预测的项目，请调整筛选条件"
 msgstr "Aucun élément prévisible avec les filtres actuels, veuillez les ajuster"
-"Aucun élément prévisible avec les filtres actuels, veuillez les ajusterAucun "
-"élément prévisible avec les filtres actuels, veuillez les ajuster"
 
 #: apps/demand_prediction/views.py:374 apps/demand_prediction/views.py:375
 msgid "所选模型不存在"
