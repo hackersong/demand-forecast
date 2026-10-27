@@ -25,6 +25,7 @@ hand, and simulate promotion scenarios before you commit to them.
 
 - [Why this project](#why-this-project)
 - [How it works](#how-it-works)
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [Tech stack](#tech-stack)
 - [Quick start](#quick-start)
@@ -74,6 +75,19 @@ flowchart LR
     T -.-> INSIGHT[Insight dashboard<br/>Top-5 regions and SKUs]
     DB -.-> INSIGHT
 ```
+
+## Screenshots
+
+All pages below run on the bundled synthetic sample data
+(`python scripts/generate_sample_data.py`).
+
+<p align="center">
+  <img src="docs/images/data-management.png" alt="Data Management" width="49%">
+  <img src="docs/images/data-insights.png" alt="Data Insights" width="49%">
+  <img src="docs/images/model-training.png" alt="Model Training" width="49%">
+  <img src="docs/images/demand-forecast.png" alt="Demand Forecast" width="49%">
+  <img src="docs/images/what-if-analysis.png" alt="What-If Analysis" width="49%">
+</p>
 
 ## Features
 

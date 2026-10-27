@@ -25,6 +25,8 @@ and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
   workflow.
 * `.env.example` and environment-driven configuration for `SECRET_KEY`,
   `DEBUG`, `ALLOWED_HOSTS` and `LANGUAGE_CODE`.
+* Module screenshots under `docs/images/`, referenced from both READMEs and
+  the usage guide (PR #11 by @abhinavkumarpathak1-coder).
 
 ### Changed
 
@@ -58,6 +60,11 @@ and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 * `scripts/sync_zh_catalog.py` no longer keeps the continuation lines of the
   previous `msgstr`, so re-syncing the Chinese catalog cannot reintroduce the
   duplication.
+* `upload_data` returned HTTP 500 on every request path that called `gettext`:
+  the row loop reused `_`, the gettext alias, as a throwaway variable, which
+  made `_` a local variable and broke every `_()` call in the view
+  (`UnboundLocalError`). Fixed in PR #11 by @abhinavkumarpathak1-coder by
+  renaming the loop variable.
 
 ### Security
 

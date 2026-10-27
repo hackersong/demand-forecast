@@ -22,6 +22,8 @@ English version: [CHANGELOG.md](CHANGELOG.md)
   `SECURITY.md`、Issue/PR 模板以及 GitHub Actions 工作流。
 * `.env.example`，以及 `SECRET_KEY`、`DEBUG`、`ALLOWED_HOSTS`、`LANGUAGE_CODE`
   的环境变量化配置。
+* 各模块界面截图（`docs/images/`），已在两份 README 与使用指南中引用
+  （PR #11，感谢 @abhinavkumarpathak1-coder）。
 
 ### 变更
 
@@ -46,6 +48,10 @@ English version: [CHANGELOG.md](CHANGELOG.md)
   并重新生成简体中文目录。
 * `scripts/sync_zh_catalog.py` 不再保留旧 `msgstr` 的续行，
   重新同步中文目录不会再引入重复。
+* `upload_data` 视图中任何调用 `gettext` 的分支都会返回 HTTP 500：
+  行循环把 gettext 别名 `_` 当作占位变量使用，使 `_` 变成局部变量，
+  视图内所有 `_()` 调用都抛出 `UnboundLocalError`。
+  PR #11（@abhinavkumarpathak1-coder）通过重命名循环变量修复。
 
 ### 安全
 

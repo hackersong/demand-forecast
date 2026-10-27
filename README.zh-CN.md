@@ -24,6 +24,7 @@
 
 - [为什么做这个项目](#为什么做这个项目)
 - [整体流程](#整体流程)
+- [界面截图](#界面截图)
 - [功能一览](#功能一览)
 - [技术栈](#技术栈)
 - [快速开始](#快速开始)
@@ -72,6 +73,18 @@ flowchart LR
     T -.-> INSIGHT[数据洞察看板<br/>Top-5 区域与 SKU]
     DB -.-> INSIGHT
 ```
+
+## 界面截图
+
+以下页面均基于仓库自带的合成样例数据（`python scripts/generate_sample_data.py`）。
+
+<p align="center">
+  <img src="docs/images/data-management.png" alt="数据管理" width="49%">
+  <img src="docs/images/data-insights.png" alt="数据洞察" width="49%">
+  <img src="docs/images/model-training.png" alt="模型训练" width="49%">
+  <img src="docs/images/demand-forecast.png" alt="需求预测" width="49%">
+  <img src="docs/images/what-if-analysis.png" alt="What-If 分析" width="49%">
+</p>
 
 ## 功能一览
 
