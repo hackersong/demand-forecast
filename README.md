@@ -29,6 +29,7 @@ hand, and simulate promotion scenarios before you commit to them.
 - [Features](#features)
 - [Tech stack](#tech-stack)
 - [Quick start](#quick-start)
+- [Docker](#docker)
 - [Preparing your data](#preparing-your-data)
 - [Trying it with sample data](#trying-it-with-sample-data)
 - [Documentation](#documentation)
@@ -151,6 +152,27 @@ production deployment notes, are in
 > `compilemessages` requires GNU gettext (`brew install gettext` on macOS,
 > `apt-get install gettext` on Debian/Ubuntu). Without it the UI falls back to
 > the source strings (Simplified Chinese).
+
+## Docker
+
+Prefer containers? One command builds the image and starts the app on port
+8000:
+
+```bash
+docker compose up --build          # add -d to run in the background
+docker compose exec web python manage.py createsuperuser
+```
+
+The image is based on `python:3.12-slim`, installs gettext for the translation
+catalogs, and on every start runs `migrate` and `collectstatic` through
+`docker-entrypoint.sh`. Static files are served by WhiteNoise, so the app runs
+with `DEBUG=False`. The SQLite database lives on the `db_data` volume and
+therefore survives `docker compose down`.
+
+All settings are read from the environment: `DJANGO_SECRET_KEY`,
+`DJANGO_DEBUG`, `DJANGO_ALLOWED_HOSTS`, `DJANGO_LANGUAGE_CODE` and
+`DJANGO_DB_PATH` — see `docker-compose.yml`. **Set your own
+`DJANGO_SECRET_KEY`** before exposing the service to anything but localhost.
 
 ## Preparing your data
 

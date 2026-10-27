@@ -127,6 +127,37 @@ python scripts/generate_sample_data.py
 
 ## 7. 生产部署
 
+### 7.1 Docker 部署（推荐）
+
+仓库已提供 `Dockerfile` 与 `docker-compose.yml`：
+
+```bash
+docker compose up --build -d
+docker compose exec web python manage.py createsuperuser
+```
+
+* 镜像：基于 `python:3.12-slim` 并安装 gettext，构建阶段即可执行
+  `manage.py compilemessages`。
+* 启动：`docker-entrypoint.sh` 依次执行迁移、收集静态文件，
+  最后以 gunicorn 监听 `0.0.0.0:8000`。
+* 静态文件：由 WhiteNoise 提供 `staticfiles/`，即使 `DJANGO_DEBUG=False`
+  也无需额外配置。
+* 数据：SQLite 位于 `db_data` 卷（`DJANGO_DB_PATH=/app/data/db.sqlite3`），
+  上传文件位于 `media_data` 卷。
+* 健康检查：镜像定义了请求 `/login/` 的 `HEALTHCHECK`，`docker ps` 可见状态。
+
+对外提供服务前请设置以下变量：
+
+| 变量 | 含义 |
+| --- | --- |
+| `DJANGO_SECRET_KEY` | **必填**，用 `python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"` 生成 |
+| `DJANGO_DEBUG` | 生产环境保持 `False` |
+| `DJANGO_ALLOWED_HOSTS` | 逗号分隔的主机名 |
+| `DJANGO_DB_PATH` | 数据库位置，保持卷内路径 |
+| `DJANGO_LANGUAGE_CODE` | 新访客的默认语言 |
+
+### 7.2 手动部署
+
 1. 设置 `DJANGO_DEBUG=False`、强随机 `DJANGO_SECRET_KEY` 与正确的 `DJANGO_ALLOWED_HOSTS`。
 2. 执行 `python manage.py collectstatic`，由 Web 服务器（或 CDN）托管 `staticfiles/`。
 3. 用应用服务器运行，例如 `gunicorn config.wsgi:application --bind 127.0.0.1:8000`。

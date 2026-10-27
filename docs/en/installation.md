@@ -131,6 +131,38 @@ upload both on the Data Management page.
 
 ## 7. Production deployment
 
+### 7.1 Docker (recommended)
+
+The repository ships a `Dockerfile` and a `docker-compose.yml`:
+
+```bash
+docker compose up --build -d
+docker compose exec web python manage.py createsuperuser
+```
+
+* Image: `python:3.12-slim` with gettext, so `manage.py compilemessages` runs
+  during the build.
+* Start-up: `docker-entrypoint.sh` applies migrations and collects static
+  files, then execs gunicorn on `0.0.0.0:8000`.
+* Static files: WhiteNoise serves `staticfiles/`, so nothing else is needed
+  even with `DJANGO_DEBUG=False`.
+* Data: the SQLite file lives on the `db_data` volume
+  (`DJANGO_DB_PATH=/app/data/db.sqlite3`), uploads on `media_data`.
+* Container health: the image defines a `HEALTHCHECK` that requests `/login/`;
+  `docker ps` shows the state.
+
+Set these before exposing the service:
+
+| Variable | Meaning |
+| --- | --- |
+| `DJANGO_SECRET_KEY` | **required**, generate with `python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"` |
+| `DJANGO_DEBUG` | keep `False` in production |
+| `DJANGO_ALLOWED_HOSTS` | comma-separated host names |
+| `DJANGO_DB_PATH` | database location, keep the volume path |
+| `DJANGO_LANGUAGE_CODE` | default language of new visitors |
+
+### 7.2 Manual deployment
+
 1. `DJANGO_DEBUG=False`, a strong `DJANGO_SECRET_KEY` and a correct
    `DJANGO_ALLOWED_HOSTS`.
 2. `python manage.py collectstatic` and serve `staticfiles/` through your web

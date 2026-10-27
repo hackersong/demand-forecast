@@ -1,0 +1,20 @@
+# Everything that must not end up inside the image.
+.git/
+.github/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.mo
+.pytest_cache/
+
+# Local state and secrets
+.env
+db.sqlite3
+staticfiles/
+media/
+TestData/*.xlsx
+
+# Internal documents
+需求预测系统_设计文档.docx
+*.md.bak

@@ -28,6 +28,7 @@
 - [功能一览](#功能一览)
 - [技术栈](#技术栈)
 - [快速开始](#快速开始)
+- [Docker 部署](#docker-部署)
 - [数据准备](#数据准备)
 - [用示例数据快速体验](#用示例数据快速体验)
 - [文档](#文档)
@@ -140,6 +141,24 @@ python manage.py runserver
 
 > `compilemessages` 依赖 GNU gettext（macOS：`brew install gettext`；
 > Debian/Ubuntu：`apt-get install gettext`）。未编译翻译时界面会回退到源语言（简体中文）。
+
+## Docker 部署
+
+想用容器？一条命令即可构建镜像并在 8000 端口启动：
+
+```bash
+docker compose up --build          # 加 -d 可后台运行
+docker compose exec web python manage.py createsuperuser
+```
+
+镜像基于 `python:3.12-slim`，内置 gettext 用于编译翻译目录，
+启动时通过 `docker-entrypoint.sh` 依次执行 `migrate` 与 `collectstatic`；
+静态文件由 WhiteNoise 提供，因此应用可在 `DEBUG=False` 下运行。
+SQLite 数据库保存在 `db_data` 卷中，执行 `docker compose down` 也不会丢失。
+
+所有配置都从环境变量读取：`DJANGO_SECRET_KEY`、`DJANGO_DEBUG`、
+`DJANGO_ALLOWED_HOSTS`、`DJANGO_LANGUAGE_CODE`、`DJANGO_DB_PATH`，
+详见 `docker-compose.yml`。**对外提供服务前请务必替换 `DJANGO_SECRET_KEY`。**
 
 ## 数据准备
 

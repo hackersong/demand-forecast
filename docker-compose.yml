@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    image: demand-forecast:latest
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # Set a real key before exposing the service to anything but localhost.
+      DJANGO_SECRET_KEY: unsafe-development-key-change-me
+      DJANGO_DEBUG: "False"
+      DJANGO_ALLOWED_HOSTS: localhost,127.0.0.1
+      DJANGO_LANGUAGE_CODE: en
+      DJANGO_DB_PATH: /app/data/db.sqlite3
+      TZ: Asia/Shanghai
+    volumes:
+      - db_data:/app/data
+      - media_data:/app/media
+    # The image ships a HEALTHCHECK; this only delays dependent services.
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/login/')"]
+      interval: 30s
+      timeout: 5s
+      start_period: 25s
+      retries: 3
+
+volumes:
+  # SQLite database. Keep the volume, otherwise every restart starts empty.
+  db_data:
+  media_data:

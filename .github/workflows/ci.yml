@@ -45,3 +45,42 @@ jobs:
 
       - name: Run tests
         run: python manage.py test --noinput
+
+  docker:
+    name: Docker image
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the image
+        run: docker build -t demand-forecast:ci .
+
+      - name: Start the container
+        run: |
+          docker run -d --name df \
+            -e DJANGO_DEBUG=False \
+            -e DJANGO_SECRET_KEY=ci-only-secret-key \
+            -e DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1 \
+            -p 8000:8000 \
+            demand-forecast:ci
+
+      - name: Wait for the healthcheck
+        run: |
+          for i in $(seq 1 40); do
+            if docker exec df python manage.py check >/dev/null 2>&1; then
+              echo "django check ok"; break
+            fi
+            sleep 3
+          done
+          # The login page is served with the default (English) catalog.
+          status=$(curl -s -o /dev/null -w '%{http_code}' --retry 20 --retry-all-errors --retry-delay 3 http://127.0.0.1:8000/login/)
+          echo "GET /login/ -> $status"
+          test "$status" = "200"
+
+      - name: Make sure migrations applied inside the container
+        run: docker exec df python manage.py migrate --check
+
+      - name: Container logs
+        if: failure()
+        run: docker logs df

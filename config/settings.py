@@ -76,6 +76,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # Serves the collected files in `STATIC_ROOT`. Needed because Django itself
+    # refuses to serve static files when DEBUG is False, which is the case for
+    # the Docker image and any real deployment.
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # Must come after SessionMiddleware and before CommonMiddleware.
     # DefaultLanguageLocaleMiddleware keeps settings.LANGUAGE_CODE as the
@@ -120,7 +124,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # DJANGO_DB_PATH lets a container keep the database on a mounted volume
+        # instead of inside the image layer.
+        'NAME': os.environ.get('DJANGO_DB_PATH', BASE_DIR / 'db.sqlite3'),
     }
 }
 
@@ -181,6 +187,16 @@ DEFAULT_CHARSET = 'utf-8'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+# Whitenoise compresses assets at collectstatic time and serves them with
+# cache-friendly headers.
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+    },
+}
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
