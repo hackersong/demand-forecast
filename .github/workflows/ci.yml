@@ -74,8 +74,8 @@ jobs:
             sleep 3
           done
           # The login page is served with the default (English) catalog.
-          status=$(curl -s -o /dev/null -w '%{http_code}' --retry 20 --retry-all-errors --retry-delay 3 http://127.0.0.1:8000/login/)
-          echo "GET /login/ -> $status"
+          status=$(curl -s -o /dev/null -w '%{http_code}' --retry 20 --retry-all-errors --retry-delay 3 http://127.0.0.1:8000/user/login/)
+          echo "GET /user/login/ -> $status"
           test "$status" = "200"
 
       - name: Make sure migrations applied inside the container

@@ -18,7 +18,7 @@ services:
       - media_data:/app/media
     # The image ships a HEALTHCHECK; this only delays dependent services.
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/login/')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/user/login/')"]
       interval: 30s
       timeout: 5s
       start_period: 25s

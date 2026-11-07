@@ -148,7 +148,8 @@ docker compose exec web python manage.py createsuperuser
   even with `DJANGO_DEBUG=False`.
 * Data: the SQLite file lives on the `db_data` volume
   (`DJANGO_DB_PATH=/app/data/db.sqlite3`), uploads on `media_data`.
-* Container health: the image defines a `HEALTHCHECK` that requests `/login/`;
+* Container health: the image defines a `HEALTHCHECK` that requests
+  `/user/login/`;
   `docker ps` shows the state.
 
 Set these before exposing the service:

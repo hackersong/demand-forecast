@@ -144,7 +144,7 @@ docker compose exec web python manage.py createsuperuser
   也无需额外配置。
 * 数据：SQLite 位于 `db_data` 卷（`DJANGO_DB_PATH=/app/data/db.sqlite3`），
   上传文件位于 `media_data` 卷。
-* 健康检查：镜像定义了请求 `/login/` 的 `HEALTHCHECK`，`docker ps` 可见状态。
+* 健康检查：镜像定义了请求 `/user/login/` 的 `HEALTHCHECK`，`docker ps` 可见状态。
 
 对外提供服务前请设置以下变量：
 

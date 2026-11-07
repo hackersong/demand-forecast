@@ -42,7 +42,7 @@ RUN python manage.py compilemessages \
 EXPOSE 8000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=25s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/login/')"
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/user/login/')"
 
 ENTRYPOINT ["/bin/sh", "/app/docker-entrypoint.sh"]
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "2", "--timeout", "120", "config.wsgi:application"]
