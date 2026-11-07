@@ -42,7 +42,7 @@ by `LoginRequiredMiddleware`.
 | `apps.data_insight` | Aggregations for the dashboard (no persistence) | no |
 | `apps.model_training` | Training engine, 14 algorithms, model metadata and results | yes |
 | `apps.demand_prediction` | Forecast execution, manual adjustment, scenarios, What-If | yes |
-| `apps.user_management` | Login, logout, placeholder registration/dashboard/permissions | no |
+| `apps.user_management` | Login, registration, roles (admin / planner / viewer), password change & reset | yes |
 
 ## 3. Data model
 
@@ -61,7 +61,10 @@ Indexes: `SalesData` on `(date, sales_region_code, product_data)`,
 
 ## 4. Training and forecasting pipeline
 
-`apps/model_training/views.py`
+`apps/model_training/views.py` + `apps/model_training/services/`
+(`services/algorithms.py` — the 14 forecast algorithms, `services/metrics.py`,
+`services/trainer.py` — preprocessing and the training orchestrator,
+`services/constants.py`)
 
 1. **Resolve targets** — `_resolve_training_items()` expands the selected
    hierarchy level and regions into region × item combinations.
@@ -147,8 +150,6 @@ The AJAX endpoints return `{"success": true|false, ...}` JSON.
 
 ## 8. Known limitations
 
-* The forecasting engine lives in `views.py` (~114 KB) instead of a service
-  layer; refactoring is on the roadmap.
 * LSTM / DeepAR are reference implementations, not tuned models.
 * `user_management` and `SystemLog` are placeholders.
 * `forecast_period` is configurable up to 24 months while several model

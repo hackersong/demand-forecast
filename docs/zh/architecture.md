@@ -42,7 +42,7 @@ SQLite（默认）── pandas / numpy ── statsmodels · prophet · sklearn
 | `apps.data_insight` | 看板聚合查询（不落库） | 无 |
 | `apps.model_training` | 训练引擎、14 种算法、模型元数据与预测结果 | 有 |
 | `apps.demand_prediction` | 预测执行、人工调整、场景保存、What-If | 有 |
-| `apps.user_management` | 登录、登出，以及占位的注册/仪表盘/权限页 | 无 |
+| `apps.user_management` | 登录、注册、角色体系（admin / planner / viewer）、修改与重置密码 | 有 |
 
 ## 3. 数据模型
 
@@ -60,7 +60,9 @@ SQLite（默认）── pandas / numpy ── statsmodels · prophet · sklearn
 
 ## 4. 训练与预测流程
 
-`apps/model_training/views.py`
+`apps/model_training/views.py` + `apps/model_training/services/`
+（`services/algorithms.py` — 14 种预测算法、`services/metrics.py` — 评估指标、
+`services/trainer.py` — 数据预处理与训练编排、`services/constants.py` — 层级映射与模型类型表）
 
 1. **解析目标** —— `_resolve_training_items()` 把所选层级与区域展开为「区域 × 产品」组合。
 2. **取数** —— 查询事实表（SKU 级或经 `CATEGORY_FIELD_MAP` 的分类级），
@@ -137,8 +139,6 @@ AJAX 接口统一返回 `{"success": true|false, ...}` 形式的 JSON。
 
 ## 8. 已知限制
 
-* 预测引擎集中在 `views.py`（约 114 KB），尚未拆分为服务层。
 * LSTM / DeepAR 属于参考实现，未做深度调优。
-* `user_management` 与 `SystemLog` 仍是占位实现。
 * `forecast_period` 最多支持 24 个月，但部分模型实现内部仍固定生成 12 个月。
 * 目前缺少自动化测试，主要依赖 `python manage.py check` 与人工冒烟验证。

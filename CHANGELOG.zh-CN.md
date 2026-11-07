@@ -9,6 +9,24 @@ English version: [CHANGELOG.md](CHANGELOG.md)
 
 ### 新增
 
+* 完整账号体系（`user_management`，issue #10）：自助注册（邮箱校验、
+  Django 密码强度校验）、基于 auth 组的角色模型（admin / planner / viewer）
+  并在所有写操作上强制校验、仅管理员可见的用户与角色管理页、
+  用户仪表盘，以及修改密码 / 重置密码流程。
+  附 29 项页面级测试，六门语言翻译同步更新。
+* 预测引擎服务层（`model_training/services/`，issue #9）：
+  `algorithms.py`（预测算法）、`metrics.py`（评估指标）、
+  `trainer.py`（预处理与训练编排）、`constants.py`（层级映射与模型类型表）。
+  `views.py` 从约 2500 行降至约 900 行并保留 re-export，
+  `apps.demand_prediction` 的导入不受影响。
+  拆分前后对纯函数（指标、Croston/SBA、趋势、季节分解、预处理、
+  重试/回退参数表）做了输出快照对比，结果完全一致；
+  另有 12 项不依赖 Django test client 的单元测试。
+* Docker 支持（issue #7）：`Dockerfile`（python:3.12-slim + gettext +
+  gunicorn）、带数据卷的 `docker-compose.yml`、启动时执行
+  migrate + collectstatic 的 `docker-entrypoint.sh`、
+  `DEBUG=False` 下由 WhiteNoise 提供静态文件，以及构建镜像并冒烟测试
+  `/login/` 的 CI 任务。
 * 多语言界面：默认英文，另有中文、Français、Deutsch、Español、日本語，
   可在运行时通过右上角下拉框切换。
 * 六门语言的完整翻译目录，并提供 `scripts/sync_zh_catalog.py`

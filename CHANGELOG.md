@@ -9,6 +9,26 @@ and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 
 ### Added
 
+* Real account management (`user_management`, issue #10): self-service
+  registration with email validation and Django password validators, a role
+  model on auth groups (admin / planner / viewer) enforced on every write
+  operation, an admin-only user & role management page, a user dashboard and
+  password change / reset flows. Ships with 29 page-level tests and updated
+  translations in all six languages.
+* Service layer for the forecasting engine (`model_training/services/`,
+  issue #9): `algorithms.py` (the forecast algorithms), `metrics.py`,
+  `trainer.py` (preprocessing and orchestration) and `constants.py`.
+  `views.py` shrank from ~2500 to ~900 lines and keeps re-exports, so
+  `apps.demand_prediction` imports are unchanged. A behaviour snapshot over
+  the pure functions (metrics, Croston/SBA, trend, decomposition,
+  preprocessing, retry/fallback tables) proved outputs identical before and
+  after the extraction; 12 new unit tests exercise the services without the
+  Django test client.
+* Docker support (issue #7): `Dockerfile` (python:3.12-slim + gettext +
+  gunicorn), `docker-compose.yml` with database/media volumes,
+  `docker-entrypoint.sh` running migrate + collectstatic on start, WhiteNoise
+  for static files under `DEBUG=False` and a CI job that builds the image and
+  smoke-tests `/login/`.
 * Multilingual user interface: English (default), 中文, Français, Deutsch,
   Español and 日本語, switchable at runtime from the top right selector.
 * Translation catalogs for all six languages plus
