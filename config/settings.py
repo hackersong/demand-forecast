@@ -203,6 +203,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Mail is only needed for the password reset flow. The development default
+# prints messages to the console; set DJANGO_EMAIL_BACKEND to a real SMTP
+# backend (plus host/user/password) when the reset link has to be delivered.
+EMAIL_BACKEND = os.environ.get(
+    'DJANGO_EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
+DEFAULT_FROM_EMAIL = os.environ.get(
+    'DJANGO_DEFAULT_FROM_EMAIL', 'noreply@demand-forecast.local')
+
 LOGIN_URL = '/user/login/'
 LOGIN_REDIRECT_URL = '/user/dashboard/'
 LOGOUT_REDIRECT_URL = '/user/login/'
@@ -212,6 +220,10 @@ LOGIN_EXEMPT_URLS = [
     r'^user/login/?$',
     r'^user/register/?$',
     r'^user/logout/?$',
+    # Anonymous users must be able to reach the whole password reset flow.
+    r'^user/password/reset/?$',
+    r'^user/password/reset/done/?$',
+    r'^user/reset/.*$',
     r'^admin/.*$',
     r'^i18n/.*$',
     r'^static/.*$',

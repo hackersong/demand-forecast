@@ -7,7 +7,45 @@
         <div class="card mt-4">
             <div class="card-body">
                 <h2 class="card-title">{% translate "用户仪表盘" %}</h2>
-                <p>{% translate "这里显示用户信息、权限和系统状态。" %}</p>
+
+                <table class="table table-sm mt-3">
+                    <tbody>
+                        <tr>
+                            <th style="width: 30%">{% translate "用户名" %}</th>
+                            <td>{{ request.user.username }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% translate "邮箱" %}</th>
+                            <td>{{ request.user.email|default:"-" }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% translate "角色" %}</th>
+                            <td><span class="badge bg-primary">{{ role }}</span></td>
+                        </tr>
+                        <tr>
+                            <th>{% translate "加入时间" %}</th>
+                            <td>{{ request.user.date_joined }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% translate "上次登录" %}</th>
+                            <td>{{ request.user.last_login|default:"-" }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6 class="mt-4">{% translate "当前角色的权限" %}</h6>
+                <div class="alert alert-info">{{ role_right }}</div>
+
+                <div class="mt-3">
+                    {% if is_admin %}
+                    <a href="{% url 'user_management:permissions' %}" class="btn btn-warning btn-sm">
+                        {% translate "用户与角色管理" %}
+                    </a>
+                    {% endif %}
+                    <a href="{% url 'user_management:password_change' %}" class="btn btn-outline-secondary btn-sm">
+                        {% translate "修改密码" %}
+                    </a>
+                </div>
             </div>
         </div>
     </div>

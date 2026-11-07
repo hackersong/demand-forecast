@@ -6,8 +6,51 @@
     <div class="col-lg-10 mx-auto">
         <div class="card mt-4">
             <div class="card-body">
-                <h2 class="card-title">{% translate "权限管理" %}</h2>
-                <p>{% translate "这里显示用户角色和权限设置。" %}</p>
+                <h2 class="card-title">{% translate "用户与角色管理" %}</h2>
+                <p class="text-muted small">{% translate "只有管理员可以调整角色；不能取消自己的管理员角色。" %}</p>
+
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>{% translate "用户名" %}</th>
+                            <th>{% translate "邮箱" %}</th>
+                            <th>{% translate "加入时间" %}</th>
+                            <th>{% translate "角色" %}</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr>
+                            <td>
+                                {{ row.user.username }}
+                                {% if row.user.is_superuser %}
+                                <span class="badge bg-danger">{% translate "超级用户" %}</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ row.user.email|default:"-" }}</td>
+                            <td>{{ row.user.date_joined }}</td>
+                            <td>{{ row.role }}</td>
+                            <td>
+                                <form method="post" action="{% url 'user_management:set_role' row.user.id %}" class="d-flex gap-2">
+                                    {% csrf_token %}
+                                    {{ row.form.role }}
+                                    <button type="submit" class="btn btn-sm btn-outline-primary">{% translate "保存" %}</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr><td colspan="5">{% translate "暂无用户" %}</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <h6 class="mt-4">{% translate "角色说明" %}</h6>
+                <ul>
+                    {% for name, right in role_rights %}
+                    <li><strong>{{ name }}</strong>：{{ right }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

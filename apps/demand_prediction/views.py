@@ -1,3 +1,4 @@
+from apps.user_management.roles import WRITE_ROLES, role_required
 from django.utils.translation import gettext as _
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
@@ -651,6 +652,7 @@ def export_forecast(request):
     return response
 
 @login_required
+@role_required(*WRITE_ROLES)
 def update_adjusted_forecast(request):
     if request.method != 'POST':
         return JsonResponse({'success': False, 'message': _('仅支持 POST 请求')})
@@ -702,6 +704,7 @@ def results_page(request):
 
 @login_required
 @never_cache
+@role_required(*WRITE_ROLES)
 def refresh_models(request):
     """AJAX: 刷新模型列表（训练完成后前端手动刷新）"""
     from apps.data_management.models import ProductData as PD

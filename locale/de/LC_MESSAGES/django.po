@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: demand-forecast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-20 14:23+0800\n"
+"POT-Creation-Date: 2026-11-07 20:38+0800\n"
 "PO-Revision-Date: 2026-10-20 14:13+0800\n"
 "Last-Translator: Demand Forecast System contributors\n"
 "Language-Team: German\n"
@@ -23,7 +23,9 @@ msgstr "Willkommen im System für Bedarfsprognosen"
 
 #: apps/core/templates/core/index.html:7
 msgid "请使用左侧菜单访问数据管理、模型训练和需求预测模块。"
-msgstr "Nutzen Sie das Menü links für die Module Datenverwaltung, Modelltraining und Bedarfsprognose."
+msgstr ""
+"Nutzen Sie das Menü links für die Module Datenverwaltung, Modelltraining und "
+"Bedarfsprognose."
 
 #: apps/core/templatetags/i18n_dates.py:55
 msgid "#year#年#month_num#月"
@@ -35,7 +37,8 @@ msgstr "Datenanalyse"
 
 #: apps/data_insight/templates/data_insight/index.html:9
 msgid "按区域和SKU维度分析销售数据，查看Top排行与销量趋势"
-msgstr "Verkaufsdaten nach Region und SKU auswerten: Top-Ranglisten und Absatztrends"
+msgstr ""
+"Verkaufsdaten nach Region und SKU auswerten: Top-Ranglisten und Absatztrends"
 
 #: apps/data_insight/templates/data_insight/index.html:19
 #: apps/data_management/templates/data_management/view_data.html:24
@@ -170,7 +173,9 @@ msgstr "Datenkorrektur"
 
 #: apps/data_management/templates/data_management/adjust_data.html:10
 msgid "快速调整最近的销售和促销记录，支持保存与删除操作"
-msgstr "Letzte Verkaufs- und Aktionsdatensätze schnell bearbeiten; Speichern und Löschen möglich"
+msgstr ""
+"Letzte Verkaufs- und Aktionsdatensätze schnell bearbeiten; Speichern und "
+"Löschen möglich"
 
 #: apps/data_management/templates/data_management/adjust_data.html:13
 msgid "返回查看"
@@ -226,6 +231,7 @@ msgstr "Aktionen"
 
 #: apps/data_management/templates/data_management/adjust_data.html:50
 #: apps/data_management/templates/data_management/adjust_data.html:130
+#: apps/user_management/templates/user_management/permissions.html:38
 msgid "保存"
 msgstr "Speichern"
 
@@ -304,7 +310,9 @@ msgstr "Vorlage für Verkaufsdaten"
 msgid ""
 "包含销售区域、产品分类、物料号、物料名称、日期、销量。每行表示一条日期的销量"
 "记录。"
-msgstr "Enthält Verkaufsregion, Produktkategorie, Material-Nr., Materialbezeichnung, Datum und Absatzmenge. Jede Zeile ist der Absatz eines Datums."
+msgstr ""
+"Enthält Verkaufsregion, Produktkategorie, Material-Nr., Materialbezeichnung, "
+"Datum und Absatzmenge. Jede Zeile ist der Absatz eines Datums."
 
 #: apps/data_management/templates/data_management/data_upload.html:21
 msgid "下载销售模板"
@@ -318,7 +326,9 @@ msgstr "Vorlage für Aktionsdaten"
 #: apps/data_management/templates/data_management/data_upload.html:37
 msgid ""
 "包含销售区域、产品分类、物料号、物料名称、日期、促销力度、开始/结束日期。"
-msgstr "Enthält Verkaufsregion, Produktkategorie, Material-Nr., Materialbezeichnung, Datum, Aktionsstärke sowie Start-/Enddatum."
+msgstr ""
+"Enthält Verkaufsregion, Produktkategorie, Material-Nr., Materialbezeichnung, "
+"Datum, Aktionsstärke sowie Start-/Enddatum."
 
 #: apps/data_management/templates/data_management/data_upload.html:39
 msgid "下载促销模板"
@@ -333,7 +343,10 @@ msgstr "Datei hochladen"
 msgid ""
 "包含销售区域、产品分类、物料信息、物料号、物料名称、日期、销量。请确保日期格"
 "式为 YYYY-MM-DD，销量为数字。每行表示一条日期的销量记录（长表格）。"
-msgstr "Enthält Verkaufsregion, Produktkategorie, Materialinformationen, Material-Nr., Materialbezeichnung, Datum und Absatzmenge. Datumsformat JJJJ-MM-TT, Absatzmenge numerisch. Jede Zeile ist der Absatz eines Datums (Long-Format)."
+msgstr ""
+"Enthält Verkaufsregion, Produktkategorie, Materialinformationen, Material-"
+"Nr., Materialbezeichnung, Datum und Absatzmenge. Datumsformat JJJJ-MM-TT, "
+"Absatzmenge numerisch. Jede Zeile ist der Absatz eines Datums (Long-Format)."
 
 #: apps/data_management/templates/data_management/data_upload.html:66
 #: apps/data_management/templates/data_management/data_upload.html:74
@@ -345,7 +358,11 @@ msgid ""
 "包含销售区域、产品分类、物料信息、物料号、物料名称、日期、促销力度、促销开始"
 "日期、促销结束日期。请确保日期格式为 YYYY-MM-DD，促销力度为数字，开始/结束日"
 "期为有效日期。"
-msgstr "Enthält Verkaufsregion, Produktkategorie, Materialinformationen, Material-Nr., Materialbezeichnung, Datum, Aktionsstärke, Aktionsstart- und Aktionsenddatum. Datumsformat JJJJ-MM-TT, Aktionsstärke numerisch, Start-/Enddatum gültig."
+msgstr ""
+"Enthält Verkaufsregion, Produktkategorie, Materialinformationen, Material-"
+"Nr., Materialbezeichnung, Datum, Aktionsstärke, Aktionsstart- und "
+"Aktionsenddatum. Datumsformat JJJJ-MM-TT, Aktionsstärke numerisch, Start-/"
+"Enddatum gültig."
 
 #: apps/data_management/templates/data_management/data_upload.html:79
 #: apps/data_management/templates/data_management/upload.html:86
@@ -358,7 +375,9 @@ msgstr "Vorhandene Daten"
 
 #: apps/data_management/templates/data_management/data_upload.html:97
 msgid "浏览、筛选和导出已上传的全部销售数据与促销数据"
-msgstr "Alle importierten Verkaufs- und Aktionsdaten durchsuchen, filtern und exportieren"
+msgstr ""
+"Alle importierten Verkaufs- und Aktionsdaten durchsuchen, filtern und "
+"exportieren"
 
 #: apps/data_management/templates/data_management/data_upload.html:99
 msgid "查看数据"
@@ -374,7 +393,9 @@ msgstr "Verkaufs- und Aktionsdaten im Excel-Format (.xlsx) importieren"
 
 #: apps/data_management/templates/data_management/upload.html:25
 msgid "包含销售区域、产品分类、物料号、物料名称，以及 201901-202203 的月销量列"
-msgstr "Enthält Verkaufsregion, Produktkategorie, Material-Nr., Materialbezeichnung sowie die Monatsabsatz-Spalten 201901-202203"
+msgstr ""
+"Enthält Verkaufsregion, Produktkategorie, Material-Nr., Materialbezeichnung "
+"sowie die Monatsabsatz-Spalten 201901-202203"
 
 #: apps/data_management/templates/data_management/upload.html:27
 #: apps/data_management/templates/data_management/upload.html:45
@@ -383,7 +404,9 @@ msgstr "Vorlage herunterladen"
 
 #: apps/data_management/templates/data_management/upload.html:43
 msgid "包含销售区域、产品分类、物料号、日期、初始价格和促销力度等字段"
-msgstr "Enthält Verkaufsregion, Produktkategorie, Material-Nr., Datum, Anfangspreis, Aktionsstärke und weitere Felder"
+msgstr ""
+"Enthält Verkaufsregion, Produktkategorie, Material-Nr., Datum, Anfangspreis, "
+"Aktionsstärke und weitere Felder"
 
 #: apps/data_management/templates/data_management/upload.html:71
 #: apps/data_management/templates/data_management/upload.html:78
@@ -473,27 +496,30 @@ msgstr "Aktionsbeginn"
 msgid "促销结束"
 msgstr "Aktionsende"
 
-#: apps/data_management/views.py:113
+#: apps/data_management/views.py:115
 msgid "未检测到上传文件，请选择要上传的销售或促销数据文件。"
-msgstr "Keine Datei erkannt. Bitte Verkaufs- oder Aktionsdatei zum Import auswählen."
+msgstr ""
+"Keine Datei erkannt. Bitte Verkaufs- oder Aktionsdatei zum Import auswählen."
 
-#: apps/data_management/views.py:276
+#: apps/data_management/views.py:278
 msgid "上传完成，但未检测到有效记录，请检查 Excel 是否符合模板格式。"
-msgstr "Import beendet, aber keine gültigen Datensätze gefunden. Prüfen Sie, ob die Excel-Datei der Vorlage entspricht."
+msgstr ""
+"Import beendet, aber keine gültigen Datensätze gefunden. Prüfen Sie, ob die "
+"Excel-Datei der Vorlage entspricht."
 
-#: apps/data_management/views.py:536
+#: apps/data_management/views.py:539
 msgid "销售数据更新成功"
 msgstr "Verkaufsdaten aktualisiert"
 
-#: apps/data_management/views.py:549
+#: apps/data_management/views.py:552
 msgid "促销数据更新成功"
 msgstr "Aktionsdaten aktualisiert"
 
-#: apps/data_management/views.py:554
+#: apps/data_management/views.py:557
 msgid "销售数据删除成功"
 msgstr "Verkaufsdaten gelöscht"
 
-#: apps/data_management/views.py:559
+#: apps/data_management/views.py:562
 msgid "促销数据删除成功"
 msgstr "Aktionsdaten gelöscht"
 
@@ -676,7 +702,7 @@ msgid "五级"
 msgstr "Ebene 5"
 
 #: apps/demand_prediction/templates/demand_prediction/forecast.html:504
-#: apps/demand_prediction/views.py:351 apps/demand_prediction/views.py:352
+#: apps/demand_prediction/views.py:352 apps/demand_prediction/views.py:353
 #: apps/model_training/templates/model_training/train.html:317
 msgid "请选择至少一个销售区域"
 msgstr "Bitte mindestens eine Verkaufsregion auswählen"
@@ -772,21 +798,21 @@ msgstr "SKU-/Kategoriecode"
 #: apps/demand_prediction/templates/demand_prediction/results.html:89
 #: apps/demand_prediction/templates/demand_prediction/results.html:534
 #: apps/model_training/templates/model_training/model_results.html:103
-#: apps/model_training/views.py:32
+#: apps/model_training/views.py:33
 msgid "一级分类"
 msgstr "Kategorie Ebene 1"
 
 #: apps/demand_prediction/templates/demand_prediction/results.html:92
 #: apps/demand_prediction/templates/demand_prediction/results.html:535
 #: apps/model_training/templates/model_training/model_results.html:104
-#: apps/model_training/views.py:33
+#: apps/model_training/views.py:34
 msgid "二级分类"
 msgstr "Kategorie Ebene 2"
 
 #: apps/demand_prediction/templates/demand_prediction/results.html:95
 #: apps/demand_prediction/templates/demand_prediction/results.html:536
 #: apps/model_training/templates/model_training/model_results.html:105
-#: apps/model_training/views.py:34
+#: apps/model_training/views.py:35
 msgid "三级分类"
 msgstr "Kategorie Ebene 3"
 
@@ -923,7 +949,9 @@ msgstr "und"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:75
 msgid "系统会取最深层级中第一个选中项作为分析目标，并自动匹配最优模型。"
-msgstr "Das System nimmt den ersten ausgewählten Eintrag der tiefsten Ebene als Analyseziel und wählt automatisch das beste Modell."
+msgstr ""
+"Das System nimmt den ersten ausgewählten Eintrag der tiefsten Ebene als "
+"Analyseziel und wählt automatisch das beste Modell."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:84
 msgid "促销力度调整"
@@ -931,7 +959,9 @@ msgstr "Aktionsanpassung"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:86
 msgid "正数表示在当前促销基础上增加促销力度，负数表示减少。例如 +10"
-msgstr "Ein positiver Wert erhöht die aktuelle Aktionsstärke, ein negativer Wert verringert sie. Zum Beispiel +10"
+msgstr ""
+"Ein positiver Wert erhöht die aktuelle Aktionsstärke, ein negativer Wert "
+"verringert sie. Zum Beispiel +10"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:86
 msgid " 表示比当前促销再多投入 10"
@@ -973,7 +1003,9 @@ msgstr "Prognosemodell (optional)"
 msgid ""
 "留空则系统自动匹配区域+产品组合的最优模型。也可手动指定一个已训练的模型进行预"
 "测。"
-msgstr "Leer lassen, damit das System das beste Modell für die Kombination Region + Produkt wählt. Sie können auch manuell ein trainiertes Modell angeben."
+msgstr ""
+"Leer lassen, damit das System das beste Modell für die Kombination Region + "
+"Produkt wählt. Sie können auch manuell ein trainiertes Modell angeben."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:111
 msgid "-- 自动匹配最优模型 --"
@@ -1043,11 +1075,16 @@ msgstr "Misst den Einfluss der Aktion auf den Absatz. Formel:"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:195
 msgid "弹性 = (有促销月均销量 / 无促销月均销量 - 1) / 平均促销力度"
-msgstr "Elastizität = (durchschnittlicher Monatsabsatz mit Aktion / durchschnittlicher Monatsabsatz ohne Aktion - 1) / durchschnittliche Aktionsstärke"
+msgstr ""
+"Elastizität = (durchschnittlicher Monatsabsatz mit Aktion / "
+"durchschnittlicher Monatsabsatz ohne Aktion - 1) / durchschnittliche "
+"Aktionsstärke"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:196
 msgid "。例如，无促销月均卖1000件，有促销月均卖1250件（+25"
-msgstr ". Beispiel: ohne Aktion durchschnittlich 1.000 Einheiten, mit Aktion 1.250 Einheiten (+25"
+msgstr ""
+". Beispiel: ohne Aktion durchschnittlich 1.000 Einheiten, mit Aktion 1.250 "
+"Einheiten (+25"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:196
 msgid "，促销平均力度0.10（即10"
@@ -1059,7 +1096,9 @@ msgstr " Rabatt), dann Elastizität = 0,25 / 0,10 = 2,50."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:197
 msgid "系统自动从历史 PromotionData 中计算，也可手动覆盖。"
-msgstr "Automatisch aus den historischen PromotionData berechnet, kann manuell überschrieben werden."
+msgstr ""
+"Automatisch aus den historischen PromotionData berechnet, kann manuell "
+"überschrieben werden."
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:200
 msgid "数据可用性:"
@@ -1075,7 +1114,8 @@ msgstr " Monate mit Aktionen)"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:204
 msgid "历史促销数据不足，使用默认弹性系数 1.0"
-msgstr "Historische Aktionsdaten unzureichend, Standardelastizität 1,0 wird verwendet"
+msgstr ""
+"Historische Aktionsdaten unzureichend, Standardelastizität 1,0 wird verwendet"
 
 #: apps/demand_prediction/templates/demand_prediction/what_if.html:207
 msgid "基线月均:"
@@ -1166,31 +1206,33 @@ msgstr "Vom What-If betroffene Regionen"
 msgid "万"
 msgstr "10k"
 
-#: apps/demand_prediction/views.py:356 apps/demand_prediction/views.py:360
+#: apps/demand_prediction/views.py:357 apps/demand_prediction/views.py:361
 msgid "当前筛选条件下没有可预测的项目，请调整筛选条件"
-msgstr "Mit den aktuellen Filtern gibt es keine prognostizierbaren Einträge, bitte anpassen"
+msgstr ""
+"Mit den aktuellen Filtern gibt es keine prognostizierbaren Einträge, bitte "
+"anpassen"
 
-#: apps/demand_prediction/views.py:374 apps/demand_prediction/views.py:375
+#: apps/demand_prediction/views.py:375 apps/demand_prediction/views.py:376
 msgid "所选模型不存在"
 msgstr "Das ausgewählte Modell existiert nicht"
 
-#: apps/demand_prediction/views.py:498
+#: apps/demand_prediction/views.py:499
 msgid "预测完成"
 msgstr "Prognose abgeschlossen"
 
-#: apps/demand_prediction/views.py:574
+#: apps/demand_prediction/views.py:575
 msgid "未指定预测场景"
 msgstr "Kein Prognoseszenario angegeben"
 
-#: apps/demand_prediction/views.py:580 apps/demand_prediction/views.py:1080
+#: apps/demand_prediction/views.py:581 apps/demand_prediction/views.py:1083
 msgid "预测场景不存在"
 msgstr "Das Prognoseszenario existiert nicht"
 
-#: apps/demand_prediction/views.py:656
+#: apps/demand_prediction/views.py:658
 msgid "仅支持 POST 请求"
 msgstr "Nur POST-Anfragen werden unterstützt"
 
-#: apps/demand_prediction/views.py:696
+#: apps/demand_prediction/views.py:698
 msgid "未找到预测结果，请重新执行预测"
 msgstr "Keine Prognoseergebnisse gefunden, bitte Prognose erneut ausführen"
 
@@ -1310,81 +1352,263 @@ msgstr "Training läuft…"
 msgid ", 训练项目数="
 msgstr ", trainierte Elemente="
 
-#: apps/model_training/views.py:31
+#: apps/model_training/views.py:32
 msgid "SKU级别"
 msgstr "SKU-Ebene"
 
-#: apps/model_training/views.py:35
+#: apps/model_training/views.py:36
 msgid "四级分类"
 msgstr "Kategorie Ebene 4"
 
-#: apps/model_training/views.py:36
+#: apps/model_training/views.py:37
 msgid "五级分类"
 msgstr "Kategorie Ebene 5"
 
-#: apps/model_training/views.py:2286
+#: apps/model_training/views.py:2288
 msgid "模型训练完成"
 msgstr "Modelltraining abgeschlossen"
 
-#: apps/model_training/views.py:2344
+#: apps/model_training/views.py:2346
 msgid "未指定模型"
 msgstr "Kein Modell angegeben"
 
-#: apps/model_training/views.py:2350
+#: apps/model_training/views.py:2352
 msgid "模型不存在"
 msgstr "Das Modell existiert nicht"
+
+#: apps/user_management/forms.py:19
+#: apps/user_management/templates/user_management/dashboard.html:14
+#: apps/user_management/templates/user_management/login.html:23
+#: apps/user_management/templates/user_management/password_reset_email.html:8
+#: apps/user_management/templates/user_management/permissions.html:15
+msgid "用户名"
+msgstr "Benutzername"
+
+#: apps/user_management/forms.py:23
+#: apps/user_management/templates/user_management/dashboard.html:18
+#: apps/user_management/templates/user_management/permissions.html:16
+msgid "邮箱"
+msgstr "E-Mail"
+
+#: apps/user_management/forms.py:27
+#: apps/user_management/templates/user_management/login.html:27
+msgid "密码"
+msgstr "Passwort"
+
+#: apps/user_management/forms.py:29
+msgid "至少 8 位，且不要与用户名过于相似。"
+msgstr "Mindestens 8 Zeichen und nicht zu ähnlich zum Benutzernamen."
+
+#: apps/user_management/forms.py:32
+msgid "确认密码"
+msgstr "Passwort bestätigen"
+
+#: apps/user_management/forms.py:39
+msgid "该用户名已被占用，请换一个。"
+msgstr "Dieser Benutzername ist bereits vergeben, bitte einen anderen wählen."
+
+#: apps/user_management/forms.py:45
+msgid "该邮箱已被注册，请直接登录或更换邮箱。"
+msgstr "Diese E-Mail ist bereits registriert. Bitte melden Sie sich an oder verwenden Sie eine andere Adresse."
+
+#: apps/user_management/forms.py:52
+msgid "两次输入的密码不一致。"
+msgstr "Die beiden Passwörter stimmen nicht überein."
+
+#: apps/user_management/forms.py:86
+#: apps/user_management/templates/user_management/dashboard.html:22
+#: apps/user_management/templates/user_management/permissions.html:18
+msgid "角色"
+msgstr "Rolle"
+
+#: apps/user_management/roles.py:72
+msgid "当前角色没有该操作的权限，请联系管理员调整角色。"
+msgstr "Ihre Rolle erlaubt diese Aktion nicht. Bitte kontaktieren Sie einen Administrator."
 
 #: apps/user_management/templates/user_management/dashboard.html:9
 msgid "用户仪表盘"
 msgstr "Benutzer-Dashboard"
 
-#: apps/user_management/templates/user_management/dashboard.html:10
-msgid "这里显示用户信息、权限和系统状态。"
-msgstr "Hier werden Benutzerinformationen, Berechtigungen und Systemstatus angezeigt."
+#: apps/user_management/templates/user_management/dashboard.html:26
+#: apps/user_management/templates/user_management/permissions.html:17
+msgid "加入时间"
+msgstr "Beigetreten am"
+
+#: apps/user_management/templates/user_management/dashboard.html:30
+msgid "上次登录"
+msgstr "Letzte Anmeldung"
+
+#: apps/user_management/templates/user_management/dashboard.html:36
+msgid "当前角色的权限"
+msgstr "Berechtigungen der aktuellen Rolle"
+
+#: apps/user_management/templates/user_management/dashboard.html:42
+#: apps/user_management/templates/user_management/permissions.html:9
+msgid "用户与角色管理"
+msgstr "Benutzer- und Rollenverwaltung"
+
+#: apps/user_management/templates/user_management/dashboard.html:46
+#: apps/user_management/templates/user_management/password_change.html:9
+#: apps/user_management/templates/user_management/password_change.html:25
+msgid "修改密码"
+msgstr "Passwort ändern"
 
 #: apps/user_management/templates/user_management/login.html:9
 #: apps/user_management/templates/user_management/login.html:30
 msgid "登录"
 msgstr "Anmelden"
 
-#: apps/user_management/templates/user_management/login.html:23
-#: apps/user_management/templates/user_management/register.html:13
-msgid "用户名"
-msgstr "Benutzername"
+#: apps/user_management/templates/user_management/password_change.html:26
+#: apps/user_management/templates/user_management/password_change_done.html:11
+msgid "返回仪表盘"
+msgstr "Zurück zum Dashboard"
 
-#: apps/user_management/templates/user_management/login.html:27
-#: apps/user_management/templates/user_management/register.html:21
-msgid "密码"
-msgstr "Passwort"
+#: apps/user_management/templates/user_management/password_change_done.html:9
+msgid "密码已更新"
+msgstr "Passwort aktualisiert"
 
-#: apps/user_management/templates/user_management/permissions.html:9
-msgid "权限管理"
-msgstr "Berechtigungen"
+#: apps/user_management/templates/user_management/password_change_done.html:10
+msgid "密码修改成功，下次登录请使用新密码。"
+msgstr "Ihr Passwort wurde geändert. Verwenden Sie bei der nächsten Anmeldung das neue Passwort."
+
+#: apps/user_management/templates/user_management/password_reset_complete.html:9
+msgid "重置完成"
+msgstr "Zurücksetzen abgeschlossen"
+
+#: apps/user_management/templates/user_management/password_reset_complete.html:10
+msgid "密码已重置，现在可以使用新密码登录。"
+msgstr "Das Passwort wurde zurückgesetzt. Sie können sich jetzt mit dem neuen Passwort anmelden."
+
+#: apps/user_management/templates/user_management/password_reset_complete.html:11
+#, fuzzy
+#| msgid "登录"
+msgid "去登录"
+msgstr "Anmelden"
+
+#: apps/user_management/templates/user_management/password_reset_confirm.html:9
+#: apps/user_management/templates/user_management/password_reset_confirm.html:21
+msgid "设置新密码"
+msgstr "Neues Passwort festlegen"
+
+#: apps/user_management/templates/user_management/password_reset_confirm.html:24
+msgid "该重置链接已失效，请重新申请。"
+msgstr "Dieser Reset-Link ist abgelaufen. Bitte fordern Sie einen neuen an."
+
+#: apps/user_management/templates/user_management/password_reset_confirm.html:25
+msgid "重新申请"
+msgstr "Neuen Link anfordern"
+
+#: apps/user_management/templates/user_management/password_reset_done.html:9
+msgid "请查收邮件"
+msgstr "Prüfen Sie Ihr Postfach"
+
+#: apps/user_management/templates/user_management/password_reset_done.html:10
+msgid "如果该邮箱已注册，重置链接已发送，请注意查收（开发环境会打印在终端）。"
+msgstr "Ist diese Adresse registriert, wurde ein Reset-Link versendet. In der Entwicklung wird die Nachricht auf der Konsole ausgegeben."
+
+#: apps/user_management/templates/user_management/password_reset_done.html:11
+#: apps/user_management/templates/user_management/password_reset_form.html:21
+msgid "返回登录"
+msgstr "Zurück zur Anmeldung"
+
+#: apps/user_management/templates/user_management/password_reset_email.html:2
+msgid "你收到这封邮件是因为有人请求重置你的密码。"
+msgstr "Sie erhalten diese E-Mail, weil jemand das Zurücksetzen Ihres Passworts angefordert hat."
+
+#: apps/user_management/templates/user_management/password_reset_email.html:4
+msgid "请打开下面的链接并设置新密码："
+msgstr "Öffnen Sie den folgenden Link und legen Sie ein neues Passwort fest:"
+
+#: apps/user_management/templates/user_management/password_reset_email.html:7
+msgid "如果没有发起该请求，忽略本邮件即可，密码不会变化。"
+msgstr "Falls Sie dies nicht angefordert haben, ignorieren Sie diese E-Mail einfach; Ihr Passwort bleibt unverändert."
+
+#: apps/user_management/templates/user_management/password_reset_form.html:9
+msgid "重置密码"
+msgstr "Passwort zurücksetzen"
+
+#: apps/user_management/templates/user_management/password_reset_form.html:10
+msgid "填写注册时使用的邮箱，系统会发送一个重置链接。"
+msgstr "Geben Sie die bei der Registrierung verwendete E-Mail ein, wir senden Ihnen einen Reset-Link."
+
+#: apps/user_management/templates/user_management/password_reset_form.html:20
+msgid "发送重置链接"
+msgstr "Reset-Link senden"
+
+#: apps/user_management/templates/user_management/password_reset_subject.txt:1
+msgid "重置你的登录密码"
+msgstr "Ihr Anmeldepasswort zurücksetzen"
 
 #: apps/user_management/templates/user_management/permissions.html:10
-msgid "这里显示用户角色和权限设置。"
-msgstr "Hier werden Benutzerrollen und Berechtigungen angezeigt."
+msgid "只有管理员可以调整角色；不能取消自己的管理员角色。"
+msgstr "Nur Administratoren können Rollen ändern; die eigene Admin-Rolle kann nicht entfernt werden."
+
+#: apps/user_management/templates/user_management/permissions.html:28
+msgid "超级用户"
+msgstr "Superuser"
+
+#: apps/user_management/templates/user_management/permissions.html:43
+msgid "暂无用户"
+msgstr "Noch keine Benutzer"
+
+#: apps/user_management/templates/user_management/permissions.html:48
+msgid "角色说明"
+msgstr "Rollenbeschreibung"
 
 #: apps/user_management/templates/user_management/register.html:9
-#: apps/user_management/templates/user_management/register.html:24
+#: apps/user_management/templates/user_management/register.html:32
 msgid "注册"
 msgstr "Registrieren"
 
-#: apps/user_management/templates/user_management/register.html:17
-msgid "邮箱"
-msgstr "E-Mail"
+#: apps/user_management/templates/user_management/register.html:10
+msgid "新账号默认为只读角色，需要上传数据或训练模型请联系管理员提升角色。"
+msgstr "Neue Konten starten mit Leserechten; wenden Sie sich für Upload- oder Trainingsrechte an einen Administrator."
 
-#: apps/user_management/views.py:15
+#: apps/user_management/templates/user_management/register.html:33
+msgid "已有账号？直接登录"
+msgstr "Schon ein Konto? Anmelden"
+
+#: apps/user_management/views.py:24
+msgid "查看数据洞察、分析结果与已有预测"
+msgstr "Dateneinblicke, Analyseergebnisse und vorhandene Prognosen ansehen"
+
+#: apps/user_management/views.py:25
+msgid "查看权限 + 上传数据、训练模型、保存与调整预测"
+msgstr "Betrachterrechte + Daten hochladen, Modelle trainieren, Prognosen speichern und anpassen"
+
+#: apps/user_management/views.py:26
+msgid "规划员权限 + 用户与角色管理"
+msgstr "Planerrechte + Benutzer- und Rollenverwaltung"
+
+#: apps/user_management/views.py:37
 msgid "请填写用户名和密码"
 msgstr "Bitte Benutzername und Passwort eingeben"
 
-#: apps/user_management/views.py:26
+#: apps/user_management/views.py:45
 msgid "该账户已被禁用"
 msgstr "Dieses Konto ist deaktiviert"
 
-#: apps/user_management/views.py:28
+#: apps/user_management/views.py:47
 msgid "用户名或密码错误"
 msgstr "Benutzername oder Passwort falsch"
+
+#: apps/user_management/views.py:72
+msgid ""
+"注册成功。当前角色为只读 viewer，如需上传数据或训练模型请联系管理员提升角色。"
+msgstr "Registrierung erfolgreich. Ihre Rolle ist Viewer (nur Lesen); kontaktieren Sie einen Administrator, um Daten hochzuladen oder Modelle zu trainieren."
+
+#: apps/user_management/views.py:125
+msgid "角色无效，请重新选择。"
+msgstr "Ungültige Rolle, bitte erneut wählen."
+
+#: apps/user_management/views.py:131
+msgid "不能取消自己的管理员角色，请由其他管理员操作。"
+msgstr "Sie können Ihre eigene Admin-Rolle nicht entfernen; bitten Sie einen anderen Administrator."
+
+#: apps/user_management/views.py:137
+#, python-format
+msgid "已将 %(name)s 的角色更新为 %(role)s。"
+msgstr "Rolle von %(name)s wurde zu %(role)s geändert."
 
 #: templates/base.html:7 templates/base.html:24 templates/base.html:102
 msgid "需求预测系统"

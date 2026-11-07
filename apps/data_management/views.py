@@ -1,3 +1,4 @@
+from apps.user_management.roles import WRITE_ROLES, role_required
 from django.utils.translation import gettext as _
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -103,6 +104,7 @@ def download_promotion_template(request):
     return response
 
 @login_required
+@role_required(*WRITE_ROLES)
 def upload_data(request):
     """上传销售或促销 Excel 并保存到数据库，包含基础的数据质量处理。"""
     if request.method == 'POST':
@@ -521,6 +523,7 @@ def export_data(request):
     return response
 
 @login_required
+@role_required(*WRITE_ROLES)
 def adjust_data(request):
     """数据调整视图"""
     if request.method == 'POST':

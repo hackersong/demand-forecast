@@ -1,3 +1,4 @@
+from apps.user_management.roles import WRITE_ROLES, role_required
 from django.utils.translation import gettext
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -2131,6 +2132,7 @@ def train_single_combination(region, sku, model_type='holt-winters', time_range=
 
 
 @login_required
+@role_required(*WRITE_ROLES)
 def train_model(request):
     """模型训练视图 —— 级联多选分类筛选 + 自动尝试多种算法并选择最优模型"""
     selected_regions = []

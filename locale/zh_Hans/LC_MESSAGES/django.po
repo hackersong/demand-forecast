@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: demand-forecast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-20 14:23+0800\n"
+"POT-Creation-Date: 2026-11-07 20:38+0800\n"
 "PO-Revision-Date: 2026-10-20 12:43+0800\n"
 "Last-Translator: Demand Forecast System contributors\n"
 "Language-Team: Chinese (Simplified)\n"
@@ -225,6 +225,7 @@ msgstr "操作"
 
 #: apps/data_management/templates/data_management/adjust_data.html:50
 #: apps/data_management/templates/data_management/adjust_data.html:130
+#: apps/user_management/templates/user_management/permissions.html:38
 msgid "保存"
 msgstr "保存"
 
@@ -472,27 +473,27 @@ msgstr "促销开始"
 msgid "促销结束"
 msgstr "促销结束"
 
-#: apps/data_management/views.py:113
+#: apps/data_management/views.py:115
 msgid "未检测到上传文件，请选择要上传的销售或促销数据文件。"
 msgstr "未检测到上传文件，请选择要上传的销售或促销数据文件。"
 
-#: apps/data_management/views.py:276
+#: apps/data_management/views.py:278
 msgid "上传完成，但未检测到有效记录，请检查 Excel 是否符合模板格式。"
 msgstr "上传完成，但未检测到有效记录，请检查 Excel 是否符合模板格式。"
 
-#: apps/data_management/views.py:536
+#: apps/data_management/views.py:539
 msgid "销售数据更新成功"
 msgstr "销售数据更新成功"
 
-#: apps/data_management/views.py:549
+#: apps/data_management/views.py:552
 msgid "促销数据更新成功"
 msgstr "促销数据更新成功"
 
-#: apps/data_management/views.py:554
+#: apps/data_management/views.py:557
 msgid "销售数据删除成功"
 msgstr "销售数据删除成功"
 
-#: apps/data_management/views.py:559
+#: apps/data_management/views.py:562
 msgid "促销数据删除成功"
 msgstr "促销数据删除成功"
 
@@ -675,7 +676,7 @@ msgid "五级"
 msgstr "五级"
 
 #: apps/demand_prediction/templates/demand_prediction/forecast.html:504
-#: apps/demand_prediction/views.py:351 apps/demand_prediction/views.py:352
+#: apps/demand_prediction/views.py:352 apps/demand_prediction/views.py:353
 #: apps/model_training/templates/model_training/train.html:317
 msgid "请选择至少一个销售区域"
 msgstr "请选择至少一个销售区域"
@@ -771,21 +772,21 @@ msgstr "SKU/分类代码"
 #: apps/demand_prediction/templates/demand_prediction/results.html:89
 #: apps/demand_prediction/templates/demand_prediction/results.html:534
 #: apps/model_training/templates/model_training/model_results.html:103
-#: apps/model_training/views.py:32
+#: apps/model_training/views.py:33
 msgid "一级分类"
 msgstr "一级分类"
 
 #: apps/demand_prediction/templates/demand_prediction/results.html:92
 #: apps/demand_prediction/templates/demand_prediction/results.html:535
 #: apps/model_training/templates/model_training/model_results.html:104
-#: apps/model_training/views.py:33
+#: apps/model_training/views.py:34
 msgid "二级分类"
 msgstr "二级分类"
 
 #: apps/demand_prediction/templates/demand_prediction/results.html:95
 #: apps/demand_prediction/templates/demand_prediction/results.html:536
 #: apps/model_training/templates/model_training/model_results.html:105
-#: apps/model_training/views.py:34
+#: apps/model_training/views.py:35
 msgid "三级分类"
 msgstr "三级分类"
 
@@ -1165,31 +1166,31 @@ msgstr "What-If 影响区域"
 msgid "万"
 msgstr "万"
 
-#: apps/demand_prediction/views.py:356 apps/demand_prediction/views.py:360
+#: apps/demand_prediction/views.py:357 apps/demand_prediction/views.py:361
 msgid "当前筛选条件下没有可预测的项目，请调整筛选条件"
 msgstr "当前筛选条件下没有可预测的项目，请调整筛选条件"
 
-#: apps/demand_prediction/views.py:374 apps/demand_prediction/views.py:375
+#: apps/demand_prediction/views.py:375 apps/demand_prediction/views.py:376
 msgid "所选模型不存在"
 msgstr "所选模型不存在"
 
-#: apps/demand_prediction/views.py:498
+#: apps/demand_prediction/views.py:499
 msgid "预测完成"
 msgstr "预测完成"
 
-#: apps/demand_prediction/views.py:574
+#: apps/demand_prediction/views.py:575
 msgid "未指定预测场景"
 msgstr "未指定预测场景"
 
-#: apps/demand_prediction/views.py:580 apps/demand_prediction/views.py:1080
+#: apps/demand_prediction/views.py:581 apps/demand_prediction/views.py:1083
 msgid "预测场景不存在"
 msgstr "预测场景不存在"
 
-#: apps/demand_prediction/views.py:656
+#: apps/demand_prediction/views.py:658
 msgid "仅支持 POST 请求"
 msgstr "仅支持 POST 请求"
 
-#: apps/demand_prediction/views.py:696
+#: apps/demand_prediction/views.py:698
 msgid "未找到预测结果，请重新执行预测"
 msgstr "未找到预测结果，请重新执行预测"
 
@@ -1309,81 +1310,263 @@ msgstr "训练中…"
 msgid ", 训练项目数="
 msgstr ", 训练项目数="
 
-#: apps/model_training/views.py:31
+#: apps/model_training/views.py:32
 msgid "SKU级别"
 msgstr "SKU级别"
 
-#: apps/model_training/views.py:35
+#: apps/model_training/views.py:36
 msgid "四级分类"
 msgstr "四级分类"
 
-#: apps/model_training/views.py:36
+#: apps/model_training/views.py:37
 msgid "五级分类"
 msgstr "五级分类"
 
-#: apps/model_training/views.py:2286
+#: apps/model_training/views.py:2288
 msgid "模型训练完成"
 msgstr "模型训练完成"
 
-#: apps/model_training/views.py:2344
+#: apps/model_training/views.py:2346
 msgid "未指定模型"
 msgstr "未指定模型"
 
-#: apps/model_training/views.py:2350
+#: apps/model_training/views.py:2352
 msgid "模型不存在"
 msgstr "模型不存在"
+
+#: apps/user_management/forms.py:19
+#: apps/user_management/templates/user_management/dashboard.html:14
+#: apps/user_management/templates/user_management/login.html:23
+#: apps/user_management/templates/user_management/password_reset_email.html:8
+#: apps/user_management/templates/user_management/permissions.html:15
+msgid "用户名"
+msgstr "用户名"
+
+#: apps/user_management/forms.py:23
+#: apps/user_management/templates/user_management/dashboard.html:18
+#: apps/user_management/templates/user_management/permissions.html:16
+msgid "邮箱"
+msgstr "邮箱"
+
+#: apps/user_management/forms.py:27
+#: apps/user_management/templates/user_management/login.html:27
+msgid "密码"
+msgstr "密码"
+
+#: apps/user_management/forms.py:29
+msgid "至少 8 位，且不要与用户名过于相似。"
+msgstr "至少 8 位，且不要与用户名过于相似。"
+
+#: apps/user_management/forms.py:32
+msgid "确认密码"
+msgstr "确认密码"
+
+#: apps/user_management/forms.py:39
+msgid "该用户名已被占用，请换一个。"
+msgstr "该用户名已被占用，请换一个。"
+
+#: apps/user_management/forms.py:45
+msgid "该邮箱已被注册，请直接登录或更换邮箱。"
+msgstr "该邮箱已被注册，请直接登录或更换邮箱。"
+
+#: apps/user_management/forms.py:52
+msgid "两次输入的密码不一致。"
+msgstr "两次输入的密码不一致。"
+
+#: apps/user_management/forms.py:86
+#: apps/user_management/templates/user_management/dashboard.html:22
+#: apps/user_management/templates/user_management/permissions.html:18
+msgid "角色"
+msgstr "角色"
+
+#: apps/user_management/roles.py:72
+msgid "当前角色没有该操作的权限，请联系管理员调整角色。"
+msgstr "当前角色没有该操作的权限，请联系管理员调整角色。"
 
 #: apps/user_management/templates/user_management/dashboard.html:9
 msgid "用户仪表盘"
 msgstr "用户仪表盘"
 
-#: apps/user_management/templates/user_management/dashboard.html:10
-msgid "这里显示用户信息、权限和系统状态。"
-msgstr "这里显示用户信息、权限和系统状态。"
+#: apps/user_management/templates/user_management/dashboard.html:26
+#: apps/user_management/templates/user_management/permissions.html:17
+msgid "加入时间"
+msgstr "加入时间"
+
+#: apps/user_management/templates/user_management/dashboard.html:30
+msgid "上次登录"
+msgstr "上次登录"
+
+#: apps/user_management/templates/user_management/dashboard.html:36
+msgid "当前角色的权限"
+msgstr "当前角色的权限"
+
+#: apps/user_management/templates/user_management/dashboard.html:42
+#: apps/user_management/templates/user_management/permissions.html:9
+msgid "用户与角色管理"
+msgstr "用户与角色管理"
+
+#: apps/user_management/templates/user_management/dashboard.html:46
+#: apps/user_management/templates/user_management/password_change.html:9
+#: apps/user_management/templates/user_management/password_change.html:25
+msgid "修改密码"
+msgstr "修改密码"
 
 #: apps/user_management/templates/user_management/login.html:9
 #: apps/user_management/templates/user_management/login.html:30
 msgid "登录"
 msgstr "登录"
 
-#: apps/user_management/templates/user_management/login.html:23
-#: apps/user_management/templates/user_management/register.html:13
-msgid "用户名"
-msgstr "用户名"
+#: apps/user_management/templates/user_management/password_change.html:26
+#: apps/user_management/templates/user_management/password_change_done.html:11
+msgid "返回仪表盘"
+msgstr "返回仪表盘"
 
-#: apps/user_management/templates/user_management/login.html:27
-#: apps/user_management/templates/user_management/register.html:21
-msgid "密码"
-msgstr "密码"
+#: apps/user_management/templates/user_management/password_change_done.html:9
+msgid "密码已更新"
+msgstr "密码已更新"
 
-#: apps/user_management/templates/user_management/permissions.html:9
-msgid "权限管理"
-msgstr "权限管理"
+#: apps/user_management/templates/user_management/password_change_done.html:10
+msgid "密码修改成功，下次登录请使用新密码。"
+msgstr "密码修改成功，下次登录请使用新密码。"
+
+#: apps/user_management/templates/user_management/password_reset_complete.html:9
+msgid "重置完成"
+msgstr "重置完成"
+
+#: apps/user_management/templates/user_management/password_reset_complete.html:10
+msgid "密码已重置，现在可以使用新密码登录。"
+msgstr "密码已重置，现在可以使用新密码登录。"
+
+#: apps/user_management/templates/user_management/password_reset_complete.html:11
+#, fuzzy
+#| msgid "登录"
+msgid "去登录"
+msgstr "去登录"
+
+#: apps/user_management/templates/user_management/password_reset_confirm.html:9
+#: apps/user_management/templates/user_management/password_reset_confirm.html:21
+msgid "设置新密码"
+msgstr "设置新密码"
+
+#: apps/user_management/templates/user_management/password_reset_confirm.html:24
+msgid "该重置链接已失效，请重新申请。"
+msgstr "该重置链接已失效，请重新申请。"
+
+#: apps/user_management/templates/user_management/password_reset_confirm.html:25
+msgid "重新申请"
+msgstr "重新申请"
+
+#: apps/user_management/templates/user_management/password_reset_done.html:9
+msgid "请查收邮件"
+msgstr "请查收邮件"
+
+#: apps/user_management/templates/user_management/password_reset_done.html:10
+msgid "如果该邮箱已注册，重置链接已发送，请注意查收（开发环境会打印在终端）。"
+msgstr "如果该邮箱已注册，重置链接已发送，请注意查收（开发环境会打印在终端）。"
+
+#: apps/user_management/templates/user_management/password_reset_done.html:11
+#: apps/user_management/templates/user_management/password_reset_form.html:21
+msgid "返回登录"
+msgstr "返回登录"
+
+#: apps/user_management/templates/user_management/password_reset_email.html:2
+msgid "你收到这封邮件是因为有人请求重置你的密码。"
+msgstr "你收到这封邮件是因为有人请求重置你的密码。"
+
+#: apps/user_management/templates/user_management/password_reset_email.html:4
+msgid "请打开下面的链接并设置新密码："
+msgstr "请打开下面的链接并设置新密码："
+
+#: apps/user_management/templates/user_management/password_reset_email.html:7
+msgid "如果没有发起该请求，忽略本邮件即可，密码不会变化。"
+msgstr "如果没有发起该请求，忽略本邮件即可，密码不会变化。"
+
+#: apps/user_management/templates/user_management/password_reset_form.html:9
+msgid "重置密码"
+msgstr "重置密码"
+
+#: apps/user_management/templates/user_management/password_reset_form.html:10
+msgid "填写注册时使用的邮箱，系统会发送一个重置链接。"
+msgstr "填写注册时使用的邮箱，系统会发送一个重置链接。"
+
+#: apps/user_management/templates/user_management/password_reset_form.html:20
+msgid "发送重置链接"
+msgstr "发送重置链接"
+
+#: apps/user_management/templates/user_management/password_reset_subject.txt:1
+msgid "重置你的登录密码"
+msgstr "重置你的登录密码"
 
 #: apps/user_management/templates/user_management/permissions.html:10
-msgid "这里显示用户角色和权限设置。"
-msgstr "这里显示用户角色和权限设置。"
+msgid "只有管理员可以调整角色；不能取消自己的管理员角色。"
+msgstr "只有管理员可以调整角色；不能取消自己的管理员角色。"
+
+#: apps/user_management/templates/user_management/permissions.html:28
+msgid "超级用户"
+msgstr "超级用户"
+
+#: apps/user_management/templates/user_management/permissions.html:43
+msgid "暂无用户"
+msgstr "暂无用户"
+
+#: apps/user_management/templates/user_management/permissions.html:48
+msgid "角色说明"
+msgstr "角色说明"
 
 #: apps/user_management/templates/user_management/register.html:9
-#: apps/user_management/templates/user_management/register.html:24
+#: apps/user_management/templates/user_management/register.html:32
 msgid "注册"
 msgstr "注册"
 
-#: apps/user_management/templates/user_management/register.html:17
-msgid "邮箱"
-msgstr "邮箱"
+#: apps/user_management/templates/user_management/register.html:10
+msgid "新账号默认为只读角色，需要上传数据或训练模型请联系管理员提升角色。"
+msgstr "新账号默认为只读角色，需要上传数据或训练模型请联系管理员提升角色。"
 
-#: apps/user_management/views.py:15
+#: apps/user_management/templates/user_management/register.html:33
+msgid "已有账号？直接登录"
+msgstr "已有账号？直接登录"
+
+#: apps/user_management/views.py:24
+msgid "查看数据洞察、分析结果与已有预测"
+msgstr "查看数据洞察、分析结果与已有预测"
+
+#: apps/user_management/views.py:25
+msgid "查看权限 + 上传数据、训练模型、保存与调整预测"
+msgstr "查看权限 + 上传数据、训练模型、保存与调整预测"
+
+#: apps/user_management/views.py:26
+msgid "规划员权限 + 用户与角色管理"
+msgstr "规划员权限 + 用户与角色管理"
+
+#: apps/user_management/views.py:37
 msgid "请填写用户名和密码"
 msgstr "请填写用户名和密码"
 
-#: apps/user_management/views.py:26
+#: apps/user_management/views.py:45
 msgid "该账户已被禁用"
 msgstr "该账户已被禁用"
 
-#: apps/user_management/views.py:28
+#: apps/user_management/views.py:47
 msgid "用户名或密码错误"
 msgstr "用户名或密码错误"
+
+#: apps/user_management/views.py:72
+msgid ""
+"注册成功。当前角色为只读 viewer，如需上传数据或训练模型请联系管理员提升角色。"
+msgstr "注册成功。当前角色为只读 viewer，如需上传数据或训练模型请联系管理员提升角色。"
+
+#: apps/user_management/views.py:125
+msgid "角色无效，请重新选择。"
+msgstr "角色无效，请重新选择。"
+
+#: apps/user_management/views.py:131
+msgid "不能取消自己的管理员角色，请由其他管理员操作。"
+msgstr "不能取消自己的管理员角色，请由其他管理员操作。"
+
+#: apps/user_management/views.py:137
+#, python-format
+msgid "已将 %(name)s 的角色更新为 %(role)s。"
+msgstr "已将 %(name)s 的角色更新为 %(role)s。"
 
 #: templates/base.html:7 templates/base.html:24 templates/base.html:102
 msgid "需求预测系统"
@@ -1413,12 +1596,3 @@ msgstr "退出登录"
 #: templates/includes/language_switcher.html:7
 msgid "语言"
 msgstr "语言"
-
-#~ msgid "英文"
-#~ msgstr "English"
-
-#~ msgid "简体中文"
-#~ msgstr "Simplified Chinese"
-
-#~ msgid "末页"
-#~ msgstr "Last page"
