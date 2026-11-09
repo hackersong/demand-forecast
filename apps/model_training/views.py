@@ -13,6 +13,7 @@ from datetime import timedelta
 logger = logging.getLogger('model_training')
 from collections import OrderedDict
 from apps.data_management.models import SalesData
+from .models import ForecastModel, ForecastResult
 from .services.constants import (
     CATEGORY_FIELD_MAP,
     HIERARCHY_LABEL_MAP,

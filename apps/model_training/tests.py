@@ -4,12 +4,21 @@ These exercise the pure algorithm/metrics functions directly, without the
 Django test client and without any database. The expected values come from a
 behaviour snapshot taken on the pre-extraction views.py, so they pin the
 exact pre-refactor behaviour.
+
+``ModelTrainingViewTests`` covers the HTTP layer that stayed in views.py: the
+training page and the results page were untested before, which is how a
+dropped ``from .models import ForecastModel, ForecastResult`` slipped through
+the extraction.
 """
+import datetime
+
 import numpy as np
 import pandas as pd
 
-from django.test import SimpleTestCase
+from django.contrib.auth import get_user_model
+from django.test import SimpleTestCase, TestCase
 
+from apps.model_training.models import ForecastModel, ForecastResult
 from apps.model_training.services.algorithms import (
     _compute_trend_forecast,
     _croston_predict,
@@ -21,6 +30,7 @@ from apps.model_training.services.algorithms import (
 from apps.model_training.services.constants import VALID_MODEL_TYPES
 from apps.model_training.services.metrics import _eval_metrics
 from apps.model_training.services.trainer import _preprocess_time_series
+from apps.user_management.roles import ROLE_ADMIN, set_role
 
 
 class MetricsTests(SimpleTestCase):
@@ -125,3 +135,53 @@ class ConfigTableTests(SimpleTestCase):
         for base in ('holt-winters', 'moving_avg', 'weighted_avg', 'seasonal_naive',
                      'croston', 'sba'):
             self.assertIn(base, VALID_MODEL_TYPES)
+
+
+class ModelTrainingViewTests(TestCase):
+    """The HTTP layer still in views.py.
+
+    ``model_results`` and ``train_model`` were never covered before the
+    extraction, so a missing model import only surfaced at request time.
+    """
+
+    def setUp(self):
+        user = get_user_model().objects.create_user(
+            username='trainer01', email='trainer01@example.com',
+            password='Strong-Pass-42')
+        set_role(user, ROLE_ADMIN)
+        self.client.force_login(user)
+        self.model = ForecastModel.objects.create(
+            sales_region_code='R1',
+            material_number='M1',
+            model_name='R1-M1 Holt-Winters',
+            model_type='holt-winters',
+            hierarchy_level='sku',
+            display_name='R1 / M1',
+            training_start_date=datetime.date(2023, 1, 1),
+            training_end_date=datetime.date(2024, 12, 1),
+            accuracy=88.5,
+            mae=3.2,
+            rmse=4.1,
+        )
+
+    def test_train_page_renders(self):
+        response = self.client.get('/model/train/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_results_page_requires_a_model_id(self):
+        response = self.client.get('/model/results/')
+        self.assertRedirects(response, '/model/train/')
+
+    def test_results_page_renders_for_a_trained_model(self):
+        ForecastResult.objects.create(
+            sales_region_code='R1',
+            material_number='M1',
+            hierarchy_level='sku',
+            date=datetime.date(2024, 1, 1),
+            actual_quantity=100,
+            forecast_quantity=98,
+            model_used='holt-winters',
+        )
+        response = self.client.get('/model/results/', {'model_id': self.model.id})
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'R1')

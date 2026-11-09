@@ -71,6 +71,11 @@ and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+* `model_results` and the training page raised `NameError` because the service
+  layer extraction dropped `from .models import ForecastModel, ForecastResult`
+  from `model_training/views.py`. Both pages are covered by tests now, and a
+  static check (`apps/core/tests.py`) fails the suite when any view module
+  references a name that no scope binds.
 * UI text was rendered two to seven times in a row (for example the home page
   hint or the upload format description). The catalogs contained `msgstr` values
   that repeated the same sentence, because the translation was written both as a

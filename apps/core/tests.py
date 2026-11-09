@@ -1,7 +1,12 @@
-"""Smoke tests: rendering, languages, localization."""
+"""Smoke tests: rendering, languages, localization, static checks."""
+import ast
+import builtins
+import pathlib
+
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.template import Context, Template
-from django.test import TestCase
+from django.test import SimpleTestCase, TestCase
 from django.utils import translation
 
 URLS = [
@@ -103,3 +108,99 @@ class LocalizedDateTests(TestCase):
         self.assertIn('mars 2025', self.render('fr'))
         self.assertIn('März 2025', self.render('de'))
         self.assertIn('marzo 2025', self.render('es'))
+
+
+class ViewModulesStaticCheckTests(SimpleTestCase):
+    """Fail when a views module references a name that is never bound.
+
+    Such mistakes (a dropped import after a refactor, for example) are
+    invisible to ``manage.py check`` and only blow up when the affected view is
+    requested, so a static check is the cheapest safety net.
+    """
+
+    @staticmethod
+    def _module_level_names(tree):
+        names = set()
+
+        def walk(node):
+            for child in ast.iter_child_nodes(node):
+                if isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef,
+                                      ast.ClassDef)):
+                    names.add(child.name)
+                    continue  # do not look inside bodies
+                if isinstance(child, (ast.Import, ast.ImportFrom)):
+                    for alias in child.names:
+                        names.add(alias.asname or alias.name.split('.')[0])
+                elif isinstance(child, ast.Assign):
+                    for target in child.targets:
+                        if isinstance(target, ast.Name):
+                            names.add(target.id)
+                walk(child)
+
+        walk(tree)
+        return names
+
+    @staticmethod
+    def _bindings(fn):
+        local = set()
+        for node in ast.walk(fn.args):
+            if isinstance(node, ast.arg):
+                local.add(node.arg)
+        for node in ast.walk(fn):
+            if isinstance(node, ast.Name) and isinstance(node.ctx, ast.Store):
+                local.add(node.id)
+            elif isinstance(node, (ast.Import, ast.ImportFrom)):
+                for alias in node.names:
+                    local.add(alias.asname or alias.name.split('.')[0])
+            elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                local.add(node.name)
+            elif isinstance(node, ast.ExceptHandler) and node.name:
+                local.add(node.name)
+            elif isinstance(node, ast.comprehension):
+                for target in ast.walk(node.target):
+                    if isinstance(target, ast.Name):
+                        local.add(target.id)
+            elif isinstance(node, ast.arg):
+                local.add(node.arg)
+        return local
+
+    @classmethod
+    def _unbound_in(cls, fn, outer, modnames):
+        """Names loaded inside `fn` that no enclosing scope binds."""
+        scope = set(outer) | set(modnames) | set(dir(builtins)) | cls._bindings(fn)
+        problems = []
+
+        def walk(node):
+            for child in ast.iter_child_nodes(node):
+                if isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef,
+                                      ast.Lambda)):
+                    continue  # checked separately with this scope as `outer`
+                if (isinstance(child, ast.Name) and isinstance(child.ctx, ast.Load)
+                        and child.id not in scope):
+                    problems.append('%s:%d %s' % (fn.name, child.lineno, child.id))
+                walk(child)
+
+        walk(fn)
+        return problems
+
+    def test_views_modules_have_no_unbound_names(self):
+        problems = []
+        for path in sorted(pathlib.Path(settings.BASE_DIR).glob('apps/*/views.py')):
+            tree = ast.parse(path.read_text(encoding='utf-8'))
+            modnames = self._module_level_names(tree)
+            functions = [n for n in ast.walk(tree)
+                         if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))]
+            parent = {}
+            for node in ast.walk(tree):
+                for child in ast.iter_child_nodes(node):
+                    parent[child] = node
+            for fn in functions:
+                outer = set()
+                node = parent.get(fn)
+                while node is not None:
+                    if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                        outer |= self._bindings(node)
+                    node = parent.get(node)
+                for issue in self._unbound_in(fn, outer, modnames):
+                    problems.append('%s: %s' % (path.name, issue))
+        self.assertEqual(problems, [], '\n'.join(problems))

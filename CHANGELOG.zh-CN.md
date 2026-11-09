@@ -60,6 +60,10 @@ English version: [CHANGELOG.md](CHANGELOG.md)
 
 ### 修复
 
+* `model_results` 与训练页抛出 `NameError`：服务层拆分时误删了
+  `model_training/views.py` 中的 `from .models import ForecastModel, ForecastResult`。
+  现已为两个页面补测试，并新增静态检查（`apps/core/tests.py`）：
+  任一视图模块引用了任何作用域都未绑定的名字时测试直接失败。
 * 界面文案被连续渲染 2～7 遍（首页提示、上传格式说明等）。原因是翻译目录的
   `msgstr` 同时写入了完整句子与自动换行的续行，gettext 拼接后同一句话重复多次。
   已修复全部六个目录（en 18、fr 27、de 21、es 26、ja 17 条），
